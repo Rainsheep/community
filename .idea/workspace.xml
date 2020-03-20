@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ca91f71-6fa2-481d-9259-9f16d62ca1c1" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="1ca91f71-6fa2-481d-9259-9f16d62ca1c1" name="默认更改列表" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,20 +14,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor>
-                <caret column="4" lean-forward="true" selection-start-column="4" selection-end-column="4" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -80,8 +65,8 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="87" />
-    <option name="y" value="63" />
+    <option name="x" value="86" />
+    <option name="y" value="62" />
     <option name="width" value="1515" />
     <option name="height" value="970" />
   </component>
@@ -181,7 +166,7 @@
       <option name="presentableId" value="Default" />
       <updated>1584676621685</updated>
       <workItem from="1584676623360" duration="2492000" />
-      <workItem from="1584680181182" duration="5924000" />
+      <workItem from="1584680181182" duration="6043000" />
     </task>
     <task id="LOCAL-00001" summary="开启毕设，先搭个环境">
       <created>1584691305335</created>
@@ -190,17 +175,30 @@
       <option name="project" value="LOCAL" />
       <updated>1584691305336</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="开启毕设，先搭个环境">
+      <created>1584692128757</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584692128757</updated>
+    </task>
+    <task id="LOCAL-00003" summary="开启毕设，先搭个环境">
+      <created>1584692153540</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1584692153540</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8416000" />
+    <option name="totallyTimeSpent" value="8535000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49457365" visible="true" weight="0.20576407" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49457365" visible="true" weight="0.20576407" />
       <window_info id="Designer" order="1" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
