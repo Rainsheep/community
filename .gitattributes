@@ -1,1 +1,5 @@
 *.sql linguist-language=java
+
+### IntelliJ IDEA ###
+.idea
+*.iml
