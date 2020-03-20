@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ca91f71-6fa2-481d-9259-9f16d62ca1c1" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,21 +17,24 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitattributes">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="63">
+                <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -57,9 +60,9 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/springmvc.xml" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/.gitattributes" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -96,8 +99,8 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="598" />
-    <option name="y" value="58" />
+    <option name="x" value="205" />
+    <option name="y" value="145" />
     <option name="width" value="1515" />
     <option name="height" value="970" />
   </component>
@@ -107,6 +110,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -164,7 +168,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -239,7 +242,10 @@
       <updated>1584676621685</updated>
       <workItem from="1584676623360" duration="2492000" />
       <workItem from="1584680181182" duration="6043000" />
-      <workItem from="1584696274234" duration="1934000" />
+      <workItem from="1584696274234" duration="2103000" />
+      <workItem from="1584707947647" duration="5000" />
+      <workItem from="1584712329907" duration="639000" />
+      <workItem from="1584715223158" duration="50000" />
     </task>
     <task id="LOCAL-00001" summary="开启毕设，先搭个环境">
       <created>1584691305335</created>
@@ -283,17 +289,31 @@
       <option name="project" value="LOCAL" />
       <updated>1584697733805</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="开启毕设，先搭个环境">
+      <created>1584698228300</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1584698228300</updated>
+    </task>
+    <task id="LOCAL-00008" summary="开启毕设，先搭个环境">
+      <created>1584698367783</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1584698367783</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10469000" />
+    <option name="totallyTimeSpent" value="11332000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="479" y="47" width="1212" height="776" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49457365" visible="true" weight="0.2694974" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49457365" weight="0.21380697" />
       <window_info id="Designer" order="1" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -316,13 +336,13 @@
       <window_info anchor="bottom" id="Problems" order="11" weight="0.32956153" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32956153" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" visible="true" weight="0.36024845" />
+      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49932975" weight="0.3281471" />
       <window_info anchor="bottom" id="JRebel Executor" order="15" />
       <window_info anchor="bottom" x="-37" y="335" width="1492" height="266" id="Word Book" order="16" show_stripe_button="false" side_tool="true" weight="0.37623763" />
       <window_info anchor="bottom" id="JRebel Console" order="17" sideWeight="0.50067025" side_tool="true" weight="0.33286119" />
       <window_info anchor="bottom" id="Messages" order="18" weight="0.3286119" />
       <window_info anchor="bottom" id="调试" order="19" weight="0.3592645" />
-      <window_info anchor="bottom" id="Event Log" order="20" sideWeight="0.50067025" side_tool="true" weight="0.22379604" />
+      <window_info anchor="bottom" id="Event Log" order="20" sideWeight="0.50067025" side_tool="true" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -337,14 +357,14 @@
       <window_info anchor="right" id="Structure" order="11" sideWeight="0.5007072" side_tool="true" weight="0.17493297" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4950495" visible="true" weight="0.2660312" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49457365" visible="true" weight="0.21380697" />
       <window_info id="Designer" order="1" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Favorites" order="5" side_tool="true" weight="0.3297587" />
       <window_info id="Web" order="6" sideWeight="0.5049505" side_tool="true" weight="0.16957104" />
-      <window_info id="JRebel" order="7" sideWeight="0.50309277" side_tool="true" weight="0.17292225" />
+      <window_info id="JRebel" order="7" sideWeight="0.50542635" side_tool="true" weight="0.2660312" />
       <window_info id="设计器" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
@@ -360,13 +380,13 @@
       <window_info anchor="bottom" id="Problems" order="11" weight="0.32956153" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.32956153" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.49932975" visible="true" weight="0.3281471" />
       <window_info anchor="bottom" id="JRebel Executor" order="15" />
       <window_info anchor="bottom" x="-37" y="335" width="1492" height="266" id="Word Book" order="16" show_stripe_button="false" side_tool="true" weight="0.37623763" />
-      <window_info anchor="bottom" id="JRebel Console" order="17" sideWeight="0.50067025" side_tool="true" weight="0.22630835" />
-      <window_info anchor="bottom" id="Messages" order="18" weight="0.32956153" />
+      <window_info anchor="bottom" id="JRebel Console" order="17" sideWeight="0.50067025" side_tool="true" weight="0.33286119" />
+      <window_info anchor="bottom" id="Messages" order="18" weight="0.3286119" />
       <window_info anchor="bottom" id="调试" order="19" weight="0.3592645" />
-      <window_info anchor="bottom" id="Event Log" order="20" sideWeight="0.50067025" side_tool="true" weight="0.22630835" />
+      <window_info anchor="bottom" id="Event Log" order="20" sideWeight="0.50067025" side_tool="true" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -455,27 +475,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="4" lean-forward="true" selection-start-column="4" selection-end-column="4" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="63">
+            <caret line="3" column="52" selection-start-line="3" selection-start-column="52" selection-end-line="3" selection-end-column="52" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
