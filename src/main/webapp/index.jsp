@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html lang="zh_CN">
 <head>
     <meta charset="utf-8"/>
@@ -7,16 +7,16 @@
     <meta name="viewport"
           content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <title>学生社团活动管理系统</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/base.css"/>
-    <link rel="stylesheet" type="text/css" href="css/animate.css"/>
-    <link rel="stylesheet" type="text/css" href="css/slide.css"/>
-    <link rel="stylesheet" type="text/css" href="css/index.css"/>
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/mc.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/common.js"></script>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/slide.css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css"/>
+    <script src="${pageContext.request.contextPath}/js/jquery-3.2.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/mc.js"></script>
+    <script src="${pageContext.request.contextPath}/js/wow.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/common.js"></script>
     <style>
         .nav li {
             padding-left: 22px;
@@ -35,7 +35,7 @@
 <header>
     <div class="wrap">
 
-        <h1 class="logo wow fadeIn"><a href="javascript:void(0);"><img src="images/logo_03.png"></a></h1>
+        <h1 class="logo wow fadeIn"><a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/images/logo_03.png"></a></h1>
 
         <div class="meun">
             <div class="meun-nav"><span></span><span></span><span></span></div>
@@ -49,8 +49,7 @@
 <nav class="navbar navbar-default col-sm-12" style="background-color: #0160b0; margin-bottom: -1px;">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-        <a class="navbar-brand" href="#"
-           style="color: white; margin-right: 20px; font-size: 25px;font-family: '宋体';">社团活动管理系统</a>
+        <a class="navbar-brand" href="#" style="color: white; margin-right: 20px; font-size: 25px;font-family: '宋体';">社团活动管理系统</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -76,7 +75,7 @@
     <div class="meunBox">
         <div class="meunCont">
             <dl>
-                <dt><a href="index.html">首页</a></dt>
+                <dt><a href="${pageContext.request.contextPath}/index.jsp">首页</a></dt>
                 <dd>
 
                 </dd>
@@ -132,15 +131,15 @@
             <div class="carousel-inner">
 
                 <div class="item active">
-                    <a href="javascript:void(0);"><img src="images/banner4.jpg" width="100%"></a>
+                    <a href="javascript:void(0);"><img src="${pageContext.request.contextPath}/images/banner4.jpg" width="100%"></a>
                 </div>
 
                 <div class="item">
-                    <a href="javascript:void(0);"> <img src="images/banner2.jpg" width="100%"></a>
+                    <a href="javascript:void(0);"> <img src="${pageContext.request.contextPath}/images/banner2.jpg" width="100%"></a>
                 </div>
 
                 <div class="item">
-                    <a href="javascript:void(0);"> <img src="images/banner3.jpg" width="100%"></a>
+                    <a href="javascript:void(0);"> <img src="${pageContext.request.contextPath}/images/banner3.jpg" width="100%"></a>
                 </div>
             </div>
         </div>
@@ -228,32 +227,32 @@
                 <div class="MultiCarousel-inner">
                     <div class="item" style="width: 285px;">
                         <div class="pad15">
-                            <a target="_blank" href="javascript:void(0);"> <img src="images/huodong1.png"></a>
+                            <a target="_blank" href="javascript:void(0);"> <img src="${pageContext.request.contextPath}/images/huodong1.png"></a>
                         </div>
                     </div>
                     <div class="item" style="width: 285px;">
                         <div class="pad15">
-                            <a target="_blank" href="javascript:void(0);"> <img src="images/huodong3.png"></a>
+                            <a target="_blank" href="javascript:void(0);"> <img src="${pageContext.request.contextPath}/images/huodong3.png"></a>
                         </div>
                     </div>
                     <div class="item" style="width: 285px;">
                         <div class="pad15">
-                            <a target="_blank" href="javascript:void(0);"> <img src="images/huodong4.png"></a>
+                            <a target="_blank" href="javascript:void(0);"> <img src="${pageContext.request.contextPath}/images/huodong4.png"></a>
                         </div>
                     </div>
                     <div class="item" style="width: 285px;">
                         <div class="pad15" style="width: 285px;">
-                            <a target="_blank" href="javascript:void(0);"> <img src="images/huodong5.png"></a>
+                            <a target="_blank" href="javascript:void(0);"> <img src="${pageContext.request.contextPath}/images/huodong5.png"></a>
                         </div>
                     </div>
                     <div class="item">
                         <div class="pad15" style="width: 285px;">
-                            <a target="_blank" href="javascript:void(0);"> <img src="images/huodong6.png"></a>
+                            <a target="_blank" href="javascript:void(0);"> <img src="${pageContext.request.contextPath}/images/huodong6.png"></a>
                         </div>
                     </div>
                     <div class="item" style="width: 285px;">
                         <div class="pad15">
-                            <a target="_blank" href="javascript:void(0);"> <img src="images/huodong2.png"></a>
+                            <a target="_blank" href="javascript:void(0);"> <img src="${pageContext.request.contextPath}/images/huodong2.png"></a>
                         </div>
                     </div>
                 </div>
@@ -272,7 +271,7 @@
 <!--link2开始 -->
 <div class="content">
     <div class="row" style="text-align: center;">
-        <img src="images/footer.png" style="height: 180px;">
+        <img src="${pageContext.request.contextPath}/images/footer.png" style="height: 180px;">
     </div>
 </div>
 <!--link2结束 -->
@@ -280,7 +279,7 @@
 <!--底部开始 -->
 <footer>
     <div class="wrap footer">
-        <div class="footerleftimg"><img src="images/ncwu.png"></div>
+        <div class="footerleftimg"><img src="${pageContext.request.contextPath}/images/ncwu.png"></div>
         <div class="foot clearfix">
             <ul class="foot_nav fl">
                 <dl class="wow slideInUp" data-wow-delay="0.9s">
@@ -297,7 +296,7 @@
 <!--底部结束 -->
 <!--置顶开始-->
 <div class="fix-nav" id="fix-nav" style="display: block;">
-    <div class="fix-nav-wrap"><img class="i-totop" src="images/to_top.png"/>
+    <div class="fix-nav-wrap"><img class="i-totop" src="${pageContext.request.contextPath}/images/to_top.png"/>
     </div>
 </div>
 <!--置顶结束 -->
