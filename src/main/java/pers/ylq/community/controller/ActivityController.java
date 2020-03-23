@@ -21,18 +21,20 @@ public class ActivityController {
     /**
      * 分页查询所有已审核活动
      */
-    @RequestMapping("/findAll")
-    public String findAll(Integer currentPage, Integer pageSize, Model model) {
-        PageInfo activityPageInfo = activityService.findAll(currentPage, pageSize);
-        //System.out.println(activityPageInfo.getList().size());
-        model.addAttribute("activityPageInfo", activityPageInfo);
-        return "allActivityList";
-    }
     //@RequestMapping("/findAll")
-    //public @ResponseBody PageInfo findAll(Integer currentPage, Integer pageSize) {
+    //public String findAll(Integer currentPage, Integer pageSize, Model model) {
     //    PageInfo activityPageInfo = activityService.findAll(currentPage, pageSize);
-    //    return activityPageInfo;
+    //    //System.out.println(activityPageInfo.getList().size());
+    //    model.addAttribute("activityPageInfo", activityPageInfo);
+    //    return "allActivityList";
     //}
+    @RequestMapping("/findAll")
+    public @ResponseBody PageInfo findAll(Integer currentPage, Integer pageSize) {
+        //System.out.println(currentPage+" "+pageSize);
+        PageInfo activityPageInfo = activityService.findAll(currentPage, pageSize);
+        //System.out.println(activityPageInfo);
+        return activityPageInfo;
+    }
 
     /**
      * 查看活动详情
@@ -40,7 +42,8 @@ public class ActivityController {
     @RequestMapping("/activityDetail")
     public String activityDetail(Integer activityId, Model model) {
         Activity activity = activityService.findActivityById(activityId);
-        System.out.println(activity.getDetail());
+        //System.out.println(activity.getDetail());
+        //System.out.println(activity.getImages().size());
         model.addAttribute("activity", activity);
         return "activityDetail";
     }

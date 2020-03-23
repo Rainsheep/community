@@ -9,4 +9,8 @@ public class IndexController {
     public String index(){
         return "index";
     }
+    @RequestMapping("/allActivityList")
+    public String allActivityList(){
+        return "allActivityList";
+    }
 }

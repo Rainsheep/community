@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>活动详情</title>
@@ -24,6 +25,11 @@
             height: 48px;
             background: #002C52;
         }
+
+        .blog_content2 img {
+            width: 262px;
+            height: 180px;
+        }
     </style>
     <script>
         $(function () {
@@ -48,7 +54,10 @@
                 <li><i>6</i><a href="#activityDetail">活动详情</a></li>
                 <li><i>8</i><a href="#mname">申请人</a></li>
                 <li><i>8</i><a href="#aname">审核人</a></li>
-                <li><i>9</i><a href="#activityImg">活动图片</a></li>
+                <c:if test="${not empty activity.images}">
+                    <li><i>9</i><a href="#activityImg">活动图片</a></li>
+                </c:if>
+
             </ul>
         </div>
         <script type="text/javascript">
@@ -134,15 +143,22 @@
                 <p id="p_aname"></p>
             </div>
         </div>
-
-        <div class="ltop" id="activityImg">
-            <h3>活动图片</h3>
-        </div>
-        <div class="news_content">
-            <div class="detail-content-body">
-                <p id="p_activityImg"></p>
+        <c:if test="${not empty activity.images}">
+            <div class="ltop" id="activityImg">
+                <h3>活动图片</h3>
             </div>
-        </div>
+            <div class="blog">
+                <ul class="blog_content2" id="activityImgList">
+                    <c:forEach items="${activity.images}" var="activityImg">
+                        <li>
+                            <div class="blog_img2">
+                                <img src="${pageContext.request.contextPath}${activityImg.url}">
+                            </div>
+                        </li>
+                    </c:forEach>
+                </ul>
+            </div>
+        </c:if>
     </div>
     <script>
         $("#p_activityName").html("${activity.name}");
@@ -153,7 +169,6 @@
         $("#p_activityDetail").html("${activity.brDetail}");
         $("#p_mname").html("${activity.managerRealName}");
         $("#p_aname").html("${activity.adminRealName}");
-        <%--$("#p_activityImg").html("${activity.datetime}");--%>
     </script>
 </div>
 <%@ include file="footer.html" %>

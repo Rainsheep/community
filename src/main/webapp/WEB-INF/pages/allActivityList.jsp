@@ -107,61 +107,139 @@
             $(".navbar-nav>li").removeClass("current");
             $("#allActivity").addClass("current");
         });
-        <%--//AJAX局部刷新--%>
-        <%--$(function () {--%>
-        <%--   load(1);--%>
-        <%--});--%>
-        <%--function load(currentPage){--%>
-        <%--    $.get("${pageContext.request.contextPath}/activity/findAll",{"currentPage":currentPage,"pageSize":10},function (pageInfo) {--%>
-        <%--        --%>
-        <%--    },"json");--%>
-        <%--}--%>
-        //分页
+        //AJAX局部刷新
         $(function () {
-            var list = "";
-            //首页
-            if (${activityPageInfo.isFirstPage}) {
-                list += "<li>首页</li>";
-            } else {
-                list += "<li><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=1&pageSize=10'>首页</a></li>";
-            }
-
-            //上一页
-            if (${activityPageInfo.hasPreviousPage}) {
-                list += "<li><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=${activityPageInfo.prePage}&pageSize=10'>上一页</a></li>";
-            } else {
-                list += "<li>上一页</li>";
-            }
-            //页码序列
-            if (${activityPageInfo.pages==0})
-            {
-                list += "<li class='thisclass'>1</li>";
-            }
-            for (var i = 1; i <= ${activityPageInfo.pages}; i++) {
-                if (i ==${activityPageInfo.pageNum}) {
-                    list += "<li class='thisclass'><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=" + i + "&pageSize=10'>" + i + "</a></li>";
-                } else {
-                    list += "<li><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=" + i + "&pageSize=10'>" + i + "</a></li>";
-                }
-            }
-            //下一页
-            if (${activityPageInfo.hasNextPage}) {
-                list += "<li><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=${activityPageInfo.nextPage}&pageSize=10'>下一页</a></li>";
-            } else {
-                list += "<li>下一页</li>";
-            }
-
-            //尾页
-            if (${activityPageInfo.isLastPage}) {
-                list += "<li>尾页</li>";
-            } else {
-                list += "<li><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=${activityPageInfo.navigateLastPage}&pageSize=10'>尾页</a></li>";
-            }
-
-            $(".page>ul").html(list);
-
-
+           load(1);
         });
+        function load(currentPage){
+            //ajax 表格和分页
+            $.get("${pageContext.request.contextPath}/activity/findAll",{"currentPage":currentPage,"pageSize":10},function (pageInfo) {
+                //表格内容
+                var activity_list="";
+                for (var i = 0; i < pageInfo.list.length; i++) {
+                    activity_list+="<tr>";
+                    activity_list+="<td>"+(i+1)+"</td>";
+                    activity_list+="<td>"+pageInfo.list[i].name+"</td>";
+                    activity_list+="<td>"+pageInfo.list[i].formatDate+"</td>";
+                    activity_list+="<td>"+pageInfo.list[i].place+"</td>";
+                    activity_list+="<td>"+pageInfo.list[i].cname+"</td>";
+                    activity_list+="<td>"+pageInfo.list[i].amount+"</td>";
+                    activity_list+="<td><a class='btn btn-primary' href='${pageContext.request.contextPath}/activity/activityDetail?activityId="+pageInfo.list[i].id+"'>查看详情</a></td>";
+                    activity_list+="</tr>";
+                }
+                $(".table tr:gt(0)").remove();
+                $("table").append(activity_list);
+
+                //分页导航条
+                var pages_list = "";
+                //首页
+                if (pageInfo.isFirstPage) {
+                    pages_list += "<li>首页</li>";
+                } else {
+                    pages_list += "<li onclick='load(1)'>首页</li>";
+                }
+
+                //上一页
+                if (pageInfo.hasPreviousPage) {
+                    pages_list += "<li onclick='load("+pageInfo.prePage+")'>上一页</li>";
+                } else {
+                    pages_list += "<li>上一页</li>";
+                }
+                //页码序列
+                if (pageInfo.pages==0)
+                {
+                    pages_list += "<li class='thisclass'>1</li>";
+                }
+
+                var begin;
+                var end;
+                if (pageInfo.pages <= 5) {
+                    begin = 1;
+                    end = pageInfo.pages;
+                } else {
+                    begin = pageInfo.pageNum-2;
+                    end = pageInfo.pageNum+2;
+
+                    if (begin < 1) {
+                        begin = 1;
+                        end = 5;
+                    }
+                    if (end > pageInfo.pages) {
+                        end = pageInfo.pages;
+                        begin = end - 4;
+                    }
+                }
+
+                for (var i = begin; i <= end; i++) {
+                    if (i ==pageInfo.pageNum) {
+                        pages_list += "<li class='thisclass'>"+i+"</li>";
+                    } else {
+                        pages_list += "<li onclick='load("+i+")'>"+i+"</li>";
+                    }
+                }
+                //下一页
+                if (pageInfo.hasNextPage) {
+                    pages_list += "<li onclick='load("+pageInfo.nextPage+")'>下一页</li>";
+                } else {
+                    pages_list += "<li>下一页</li>";
+                }
+
+                //尾页
+                if (pageInfo.isLastPage) {
+                    pages_list += "<li>尾页</li>";
+                } else {
+                    pages_list += "<li onclick='load("+pageInfo.pages+")'>尾页</li>";
+                }
+
+                $(".page>ul").html(pages_list);
+            },"json");
+        }
+        //分页
+        <%--$(function () {--%>
+        <%--    var list = "";--%>
+        <%--    //首页--%>
+        <%--    if (${activityPageInfo.isFirstPage}) {--%>
+        <%--        list += "<li>首页</li>";--%>
+        <%--    } else {--%>
+        <%--        list += "<li><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=1&pageSize=10'>首页</a></li>";--%>
+        <%--    }--%>
+
+        <%--    //上一页--%>
+        <%--    if (${activityPageInfo.hasPreviousPage}) {--%>
+        <%--        list += "<li><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=${activityPageInfo.prePage}&pageSize=10'>上一页</a></li>";--%>
+        <%--    } else {--%>
+        <%--        list += "<li>上一页</li>";--%>
+        <%--    }--%>
+        <%--    //页码序列--%>
+        <%--    if (${activityPageInfo.pages==0})--%>
+        <%--    {--%>
+        <%--        list += "<li class='thisclass'>1</li>";--%>
+        <%--    }--%>
+        <%--    for (var i = 1; i <= ${activityPageInfo.pages}; i++) {--%>
+        <%--        if (i ==${activityPageInfo.pageNum}) {--%>
+        <%--            list += "<li class='thisclass'><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=" + i + "&pageSize=10'>" + i + "</a></li>";--%>
+        <%--        } else {--%>
+        <%--            list += "<li><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=" + i + "&pageSize=10'>" + i + "</a></li>";--%>
+        <%--        }--%>
+        <%--    }--%>
+        <%--    //下一页--%>
+        <%--    if (${activityPageInfo.hasNextPage}) {--%>
+        <%--        list += "<li><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=${activityPageInfo.nextPage}&pageSize=10'>下一页</a></li>";--%>
+        <%--    } else {--%>
+        <%--        list += "<li>下一页</li>";--%>
+        <%--    }--%>
+
+        <%--    //尾页--%>
+        <%--    if (${activityPageInfo.isLastPage}) {--%>
+        <%--        list += "<li>尾页</li>";--%>
+        <%--    } else {--%>
+        <%--        list += "<li><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=${activityPageInfo.navigateLastPage}&pageSize=10'>尾页</a></li>";--%>
+        <%--    }--%>
+
+        <%--    $(".page>ul").html(list);--%>
+
+
+        <%--});--%>
     </script>
 </head>
 
@@ -180,21 +258,21 @@
                 <th>参与人数</th>
                 <th>操作</th>
             </tr>
-            <c:forEach items="${activityPageInfo.list}" var="activity" varStatus="s">
-                <tr>
-                    <td>${s.count}</td>
-                    <td>${activity.name}</td>
-                    <td>${activity.formatDate}</td>
-                    <td>${activity.place}</td>
-                    <td>${activity.cname}</td>
-                    <td>${activity.amount}</td>
-                    <td>
-                        <a class="btn btn-primary"
-                           href="${pageContext.request.contextPath}/activity/activityDetail?activityId=${activity.id}"
-                           role="button">查看详情</a>
-                    </td>
-                </tr>
-            </c:forEach>
+<%--            <c:forEach items="${activityPageInfo.list}" var="activity" varStatus="s">--%>
+<%--                <tr>--%>
+<%--                    <td>${s.count}</td>--%>
+<%--                    <td>${activity.name}</td>--%>
+<%--                    <td>${activity.formatDate}</td>--%>
+<%--                    <td>${activity.place}</td>--%>
+<%--                    <td>${activity.cname}</td>--%>
+<%--                    <td>${activity.amount}</td>--%>
+<%--                    <td>--%>
+<%--                        <a class="btn btn-primary"--%>
+<%--                           href="${pageContext.request.contextPath}/activity/activityDetail?activityId=${activity.id}"--%>
+<%--                           role="button">查看详情</a>--%>
+<%--                    </td>--%>
+<%--                </tr>--%>
+<%--            </c:forEach>--%>
 
         </table>
     </div>

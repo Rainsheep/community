@@ -30,7 +30,7 @@ public interface ActivityMapper {
                     one = @One(select = "pers.ylq.community.mapper.AdminMapper.findRealNameById")),
             @Result(property = "dismissMessage", column = "dismiss_message"),
             @Result(property = "images", column = "id",
-                    many = @Many(select = "pers.ylq.community.mapper.ActivityImgMapper.findImgById"))
+                    many = @Many(select = "pers.ylq.community.mapper.ActivityImgMapper.findImgByActivityId"))
     })
     List<Activity> findAll();
 

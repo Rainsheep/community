@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface ActivityImgMapper {
-    @Select("select * from tb_activityimg where id = #{id}")
-    List<ActivityImg> findImgById(Integer id);
+    @Select("select * from tb_activityimg where activity_id = #{activityId}")
+    List<ActivityImg> findImgByActivityId(Integer activityId);
 }
