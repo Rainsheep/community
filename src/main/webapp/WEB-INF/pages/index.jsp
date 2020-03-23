@@ -31,7 +31,10 @@
 </head>
 
 <body>
-<jsp:include page="header.jsp" flush="true"/>
+<!-- 头部开始，头部和导航条 -->
+<%--<jsp:include page="header.jsp" flush="true"/>--%>
+<%@ include file="header.html"%>
+<!-- 头部结束 -->
 <!--banner开始 -->
 <section class="topbanner">
     <div class="banner">
@@ -203,22 +206,8 @@
 <!--link2结束 -->
 
 <!--底部开始 -->
-<footer>
-    <div class="wrap footer">
-        <div class="footerleftimg"><img src="${pageContext.request.contextPath}/images/ncwu.png"></div>
-        <div class="foot clearfix">
-            <ul class="foot_nav fl">
-                <dl class="wow slideInUp" data-wow-delay="0.9s">
-                    <dd>花园校区地址：河南省郑州市北环路36号&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;邮编：450045</dd>
-                    <dd>龙子湖校区地址：河南省郑州市金水东路136号 &nbsp;&nbsp;&nbsp;&nbsp;邮编：450046</dd>
-                    <dd>
-                    </dd>
-                </dl>
-            </ul>
-        </div>
-
-    </div>
-</footer>
+<%--<jsp:include page="footer.html"/>--%>
+<%@ include file="footer.html"%>
 <!--底部结束 -->
 <!--置顶开始-->
 <div class="fix-nav" id="fix-nav" style="display: block;">

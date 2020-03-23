@@ -23,4 +23,9 @@ public class ActivityServiceImpl implements ActivityService {
         PageInfo<Activity> activityPageInfo = new PageInfo<>(activities);
         return activityPageInfo;
     }
+
+    @Override
+    public Activity findActivityById(Integer activityId) {
+        return activityMapper.findActivityById(activityId);
+    }
 }

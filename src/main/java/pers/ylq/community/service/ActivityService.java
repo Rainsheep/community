@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface ActivityService {
     PageInfo findAll(int currentPage, int pageSize);
+
+    Activity findActivityById(Integer activityId);
 }
