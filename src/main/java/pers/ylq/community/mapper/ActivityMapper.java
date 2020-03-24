@@ -2,14 +2,17 @@ package pers.ylq.community.mapper;
 
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
+import pers.ylq.community.dto.ConditionSearch;
 import pers.ylq.community.entity.Activity;
+import pers.ylq.community.utils.SqlProvider;
 
 import java.util.List;
 
 @Repository
 public interface ActivityMapper {
 
-    @Select("select * from tb_activity where type = 1")
+    //@Select("select * from tb_activity where type = 1 order by datetime DESC")
+    @SelectProvider(type = SqlProvider.class,method = "selectAllActivity")
     @Results(id = "activityMap", value = {
             @Result(property = "id", column = "id", id = true),
             @Result(property = "name", column = "name"),
@@ -32,7 +35,7 @@ public interface ActivityMapper {
             @Result(property = "images", column = "id",
                     many = @Many(select = "pers.ylq.community.mapper.ActivityImgMapper.findImgByActivityId"))
     })
-    List<Activity> findAll();
+    List<Activity> findAll(ConditionSearch condition);
 
     @Select("select * from tb_activity where id=#{activityId}")
     @ResultMap("activityMap")

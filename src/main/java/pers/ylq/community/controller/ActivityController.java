@@ -4,8 +4,10 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import pers.ylq.community.dto.ConditionSearch;
 import pers.ylq.community.entity.Activity;
 import pers.ylq.community.service.ActivityService;
 
@@ -29,10 +31,12 @@ public class ActivityController {
     //    return "allActivityList";
     //}
     @RequestMapping("/findAll")
-    public @ResponseBody PageInfo findAll(Integer currentPage, Integer pageSize) {
+    public @ResponseBody PageInfo findAll(ConditionSearch condition) {
+        //System.out.println(condition);
         //System.out.println(currentPage+" "+pageSize);
-        PageInfo activityPageInfo = activityService.findAll(currentPage, pageSize);
-        //System.out.println(activityPageInfo);
+        //System.out.println(condition.getPageSize());
+        PageInfo activityPageInfo = activityService.findAll(condition);
+        //System.out.println(activityPageInfo.getPageSize());
         return activityPageInfo;
     }
 
