@@ -23,12 +23,17 @@ public class Activity implements Serializable {
     private Integer type; //审核状态
     private Integer aid;  //审核人ID
     private String adminRealName; //审核人名字
+    private Date updateTime; //更新时间
     private String dismissMessage;  //驳回信息
     private List<ActivityImg> images;
 
     public String getFormatDate(){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
         return sdf.format(datetime);
+    }
+    public String getFormatUpdateTime(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
+        return sdf.format(updateTime);
     }
     public String getBrDetail(){
         String brDetail=null;

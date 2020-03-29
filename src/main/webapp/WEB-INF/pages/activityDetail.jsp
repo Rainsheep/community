@@ -53,9 +53,10 @@
                 <li><i>5</i><a href="#activityAmount">参与人数</a></li>
                 <li><i>6</i><a href="#activityDetail">活动详情</a></li>
                 <li><i>8</i><a href="#mname">申请人</a></li>
-                <li><i>8</i><a href="#aname">审核人</a></li>
+                <li><i>9</i><a href="#aname">审核人</a></li>
+                <li><i>10</i><a href="#updateTime">审核时间</a></li>
                 <c:if test="${not empty activity.images}">
-                    <li><i>9</i><a href="#activityImg">活动图片</a></li>
+                    <li><i>11</i><a href="#activityImg">活动图片</a></li>
                 </c:if>
 
             </ul>
@@ -143,6 +144,14 @@
                 <p id="p_aname"></p>
             </div>
         </div>
+        <div class="ltop" id="updateTime">
+            <h3>审核时间</h3>
+        </div>
+        <div class="news_content">
+            <div class="detail-content-body">
+                <p id="p_updateTime"></p>
+            </div>
+        </div>
         <c:if test="${not empty activity.images}">
             <div class="ltop" id="activityImg">
                 <h3>活动图片</h3>
@@ -169,6 +178,7 @@
         $("#p_activityDetail").html("${activity.brDetail}");
         $("#p_mname").html("${activity.managerRealName}");
         $("#p_aname").html("${activity.adminRealName}");
+        $("#p_updateTime").html("${activity.formatUpdateTime}");
     </script>
 </div>
 <%@ include file="footer.html" %>

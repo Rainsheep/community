@@ -115,6 +115,13 @@
             margin-bottom: 0;
             background-color: #e9f0fd;
         }
+
+        .oneline {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            overflow: hidden;
+        }
     </style>
     <script>
         //导航
@@ -150,9 +157,9 @@
                 for (var i = 0; i < pageInfo.list.length; i++) {
                     activity_list += "<tr>";
                     activity_list += "<td>" + (i + 1) + "</td>";
-                    activity_list += "<td>" + pageInfo.list[i].name + "</td>";
+                    activity_list += "<td class='oneline' title="+pageInfo.list[i].name+">" + pageInfo.list[i].name + "</td>";
                     activity_list += "<td>" + pageInfo.list[i].formatDate + "</td>";
-                    activity_list += "<td>" + pageInfo.list[i].place + "</td>";
+                    activity_list += "<td class='oneline' title="+pageInfo.list[i].place+">" + pageInfo.list[i].place + "</td>";
                     activity_list += "<td>" + pageInfo.list[i].cname + "</td>";
                     activity_list += "<td>" + pageInfo.list[i].amount + "</td>";
                     activity_list += "<td><a class='btn btn-primary' href='${pageContext.request.contextPath}/activity/activityDetail?activityId=" + pageInfo.list[i].id + "'>查看详情</a></td>";
@@ -316,15 +323,15 @@
         </div>
     </div>
     <div class="row">
-        <table class="table table-bordered" style="color:#0f0f0f;margin-top: 20px">
+        <table class="table table-bordered" style="color:#0f0f0f;margin-top: 20px;table-layout: fixed">
             <tr class="success">
-                <th>序号</th>
-                <th>活动名称</th>
-                <th>活动时间</th>
-                <th>活动地点</th>
-                <th>所属社团</th>
-                <th>参与人数</th>
-                <th>操作</th>
+                <th style="width: 5%">序号</th>
+                <th style="width: 21%">活动名称</th>
+                <th style="width: 20%">活动时间</th>
+                <th style="width: 21%">活动地点</th>
+                <th style="width: 15%">所属社团</th>
+                <th style="width: 8%">参与人数</th>
+                <th style="width: 10%">操作</th>
             </tr>
             <%--            <c:forEach items="${activityPageInfo.list}" var="activity" varStatus="s">--%>
             <%--                <tr>--%>

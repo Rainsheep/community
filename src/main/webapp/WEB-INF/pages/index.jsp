@@ -90,7 +90,7 @@
                     <li role="presentation" class="active"><a href="#idxnews" aria-controls="idxNews" role="tab"
                                                               data-toggle="tab" aria-expanded="true">最新活动</a></li>
 
-                    <p class="text-right" style="padding-top: 15px;"><a href="javascript:void(0);">更多>></a></p>
+                    <p class="text-right" style="padding-top: 15px;"><a href="${pageContext.request.contextPath}/allActivityList">更多>></a></p>
                 </ul>
                 <div class="tab-content" id="myTabContent1">
                     <div role="tabpanel" class="tab-pane active" id="idxnews">
@@ -104,7 +104,7 @@
                 <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active"><a href="#idxnews2" aria-controls="idxNews2" role="tab"
                                                               data-toggle="tab" aria-expanded="true">通知公告</a></li>
-                    <p class="text-right" style="padding-top: 15px;"><a href="javascript:void(0);">更多>></a>
+                    <p class="text-right" style="padding-top: 15px;"><a href="${pageContext.request.contextPath}/allNoticeList">更多>></a>
                     </p>
                 </ul>
                 <div class="tab-content">
@@ -217,6 +217,7 @@
 <!--置顶结束 -->
 
 <script>
+    <%--   最新活动 --%>
     $(function () {
         $.ajax({
             type: "GET",
@@ -240,12 +241,11 @@
 
 <script>
     $(function () {
+        <%--    通知公告 --%>
         $.ajax({
             type: "GET",
             //async: "false",
             dataType: "json",
-            // dataType : "jsonp", // 返回的数据类型，设置为JSONP方式                jsonp : 'callback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
-            // jsonp: "jsoncallback",         //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
             url: "https://news.ncwu.edu.cn/dataindex/dataindex.json",
             success: function (result) {
                 var str = "";

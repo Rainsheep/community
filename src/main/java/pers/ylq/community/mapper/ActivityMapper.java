@@ -31,6 +31,7 @@ public interface ActivityMapper {
             @Result(property = "aid", column = "aid"),
             @Result(property = "adminRealName", column = "aid",
                     one = @One(select = "pers.ylq.community.mapper.AdminMapper.findRealNameById")),
+            @Result(property = "updateTime",column = "update_time"),
             @Result(property = "dismissMessage", column = "dismiss_message"),
             @Result(property = "images", column = "id",
                     many = @Many(select = "pers.ylq.community.mapper.ActivityImgMapper.findImgByActivityId"))

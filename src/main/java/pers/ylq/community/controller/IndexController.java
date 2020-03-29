@@ -13,4 +13,8 @@ public class IndexController {
     public String allActivityList(){
         return "allActivityList";
     }
+    @RequestMapping("/allNoticeList")
+    public String allNoticeList(){
+        return "allNoticeList";
+    }
 }
