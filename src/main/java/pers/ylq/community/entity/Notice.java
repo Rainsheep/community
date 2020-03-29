@@ -28,6 +28,11 @@ public class Notice implements Serializable {
         return sdf.format(datetime);
     }
 
+    public String getMonthAndDay() {
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
+        return sdf.format(datetime);
+    }
+
     public String getFormatDay() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd");
         return sdf.format(datetime);

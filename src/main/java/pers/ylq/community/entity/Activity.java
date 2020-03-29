@@ -31,6 +31,10 @@ public class Activity implements Serializable {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
         return sdf.format(datetime);
     }
+    public String getMonthAndDay(){
+        SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
+        return sdf.format(datetime);
+    }
     public String getFormatUpdateTime(){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
         return sdf.format(updateTime);

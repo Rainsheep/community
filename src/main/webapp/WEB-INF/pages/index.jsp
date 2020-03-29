@@ -85,7 +85,7 @@
 <section id="content">
     <div class="container">
         <div class="row">
-            <div class="col-md-7 col-xs-12 col-sm-6">
+            <div class="col-md-6 col-xs-12 col-sm-6">
                 <ul class="nav nav-tabs" role="tablist" id="myTab1">
                     <li role="presentation" class="active"><a href="#idxnews" aria-controls="idxNews" role="tab"
                                                               data-toggle="tab" aria-expanded="true">最新活动</a></li>
@@ -100,7 +100,7 @@
                 </div>
             </div>
 
-            <div class="col-md-5 col-xs-12 col-sm-6">
+            <div class="col-md-6 col-xs-12 col-sm-6">
                 <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active"><a href="#idxnews2" aria-controls="idxNews2" role="tab"
                                                               data-toggle="tab" aria-expanded="true">通知公告</a></li>
@@ -110,7 +110,7 @@
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="idxnews2">
                         <ul id="tzgg">
-
+                        <%--<li><a href="#" title=""><em></em>111</a><span>03-28</span></li>--%>
                         </ul>
                     </div>
                 </div>
@@ -217,48 +217,35 @@
 <!--置顶结束 -->
 
 <script>
-    <%--   最新活动 --%>
     $(function () {
-        $.ajax({
-            type: "GET",
-            //async: "false",
-            dataType: "json",
-            // dataType : "jsonp", // 返回的数据类型，设置为JSONP方式                jsonp : 'callback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
-            // jsonp: "jsoncallback",         //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
-            url: "https://news.ncwu.edu.cn/channels/newsindex.json",
-            success: function (result) {
-                var str = "<ul>";
-                $.each(result["news"], function (index, obj) {
-                    str += "<li><a href='" + obj["NavigationUrl"] + "' target='_blank' style='color:" + obj[
-                            "TitleColor"] + "' title='" + obj["Title"] + "'><em></em>" + obj["Title"] + "</a><span>" +
-                        obj["AddDate"] + "</span></li>";
-                });
-                $("#idxnews").append(str + "</ul>");
+        <%--   最新活动 --%>
+        $.post("${pageContext.request.contextPath}/activity/findAll",{
+            "currentPage":1,
+            "pageSize":8
+        },function (pageInfo) {
+            var str = "<ul>";
+            for (var i=0;i<pageInfo.list.length;i++){
+                str+='<li><a href="${pageContext.request.contextPath}/activity/activityDetail?activityId='+pageInfo.list[i].id+'" title="'+pageInfo.list[i].name+'"><em></em>'+pageInfo.list[i].name+'</a><span>'+pageInfo.list[i].monthAndDay+'</span></li>';
             }
-        });
+            $("#idxnews").html(str + "</ul>");
+        },"json");
     });
 </script>
 
 <script>
     $(function () {
         <%--    通知公告 --%>
-        $.ajax({
-            type: "GET",
-            //async: "false",
-            dataType: "json",
-            url: "https://news.ncwu.edu.cn/dataindex/dataindex.json",
-            success: function (result) {
-                var str = "";
-                $.each(result["tzgg"], function (index, obj) {
-                    str += "<li><a href='" + obj["NavigationUrl"] + "' target='_blank' style='color:" + obj[
-                            "TitleColor"] + "' title='" + obj["Title"] + "'><em></em>" + obj["Title"] + "</a><span>" +
-                        obj["AddDate"] + "</span></li>";
-                    //str += "<li><u><a href='"+obj["bmtzurl"]+"'>【"+obj["bmmc"]+"】</a><a href='"+obj["NavigationUrl"]+"' target='_blank' title='"+obj["Title"]+"'>"+obj["Title"]+"</a></u><i>"+obj["AddDate"]+"</i></li>";
-                });
-                $("#tzgg").append(str);
-
+        $.post("${pageContext.request.contextPath}/notice/findAll",{
+            "currentPage":1,
+            "pageSize":8
+        },function (pageInfo) {
+            var str="";
+            for (var i=0;i<pageInfo.list.length;i++){
+                str+='<li><a href="${pageContext.request.contextPath}/notice/noticeDetail?noticeId='+pageInfo.list[i].id+'" title="'+pageInfo.list[i].title+'"><em></em>'+pageInfo.list[i].title+'</a><span>'+pageInfo.list[i].monthAndDay+'</span></li>';
             }
-        });
+            $("#tzgg").html(str);
+        },"json");
+
     });
 </script>
 </body>
