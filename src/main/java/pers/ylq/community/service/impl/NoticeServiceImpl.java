@@ -21,6 +21,9 @@ public class NoticeServiceImpl implements NoticeService {
     public PageInfo findAll(NoticeConditionSearch condition) {
         PageHelper.startPage(condition.getCurrentPage(), condition.getPageSize());
         List<Notice> notices = noticeMapper.findAll(condition);
+        //for (Notice notice : notices) {
+        //    System.out.println(notice);
+        //}
         PageInfo<Notice> noticePageInfo = new PageInfo<>(notices);
         return noticePageInfo;
     }

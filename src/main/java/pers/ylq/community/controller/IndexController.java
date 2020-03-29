@@ -17,4 +17,10 @@ public class IndexController {
     public String allNoticeList(){
         return "allNoticeList";
     }
+    @RequestMapping("/allCommunityList")
+    public String allCommunityList(){
+        return "allCommunityList";
+    }
+
+
 }

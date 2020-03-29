@@ -101,10 +101,9 @@
             color: #fff;
         }
 
-        #activity_search {
+        #communitySearch {
             float: right;
             margin-top: 20px;
-            margin-right: 60px;
         }
 
         #collapseExample {
@@ -127,11 +126,11 @@
         //导航
         $(function () {
             $(".navbar-nav>li").removeClass("current");
-            $("#allActivity").addClass("current");
+            $("#allCommunity").addClass("current");
         });
         //AJAX局部刷新
         $(function () {
-            $("#conditionSearch").submit(function () {
+            $("#communitySearch").submit(function () {
                 load(1);
                 return false;
             });
@@ -139,34 +138,28 @@
         });
 
         function load(currentPage) {
-            var activityName = $("#activityName").val();
-            var activityTime = $("#activityTime").val();
-            var activityPlace = $("#activityPlace").val();
-            var community = $("#community").val();
+            var keyword = $("#keyword").val();
             //ajax 表格和分页
-            $.post("${pageContext.request.contextPath}/activity/findAll", {
+            $.post("${pageContext.request.contextPath}/community/findAll", {
                 "currentPage": currentPage,
                 "pageSize": 8,
-                "activityName": activityName,
-                "activityTime": activityTime,
-                "activityPlace": activityPlace,
-                "community": community
+                "keyword": keyword
             }, function (pageInfo) {
                 //表格内容
-                var activity_list = "";
+                var communoty_list = "";
                 for (var i = 0; i < pageInfo.list.length; i++) {
-                    activity_list += "<tr>";
-                    activity_list += '<td style="display:table-cell; vertical-align:middle">' + (i + 1) + "</td>";
-                    activity_list += "<td style='display:table-cell; vertical-align:middle' class='oneline' title="+pageInfo.list[i].name+">" + pageInfo.list[i].name + "</td>";
-                    activity_list += "<td style='display:table-cell; vertical-align:middle'>" + pageInfo.list[i].formatDate + "</td>";
-                    activity_list += "<td style='display:table-cell; vertical-align:middle' class='oneline' title="+pageInfo.list[i].place+">" + pageInfo.list[i].place + "</td>";
-                    activity_list += "<td style='display:table-cell; vertical-align:middle'>" + pageInfo.list[i].cname + "</td>";
-                    activity_list += "<td style='display:table-cell; vertical-align:middle'>" + pageInfo.list[i].amount + "</td>";
-                    activity_list += "<td style='display:table-cell; vertical-align:middle'><a class='btn btn-primary' href='${pageContext.request.contextPath}/activity/activityDetail?activityId=" + pageInfo.list[i].id + "'>查看详情</a></td>";
-                    activity_list += "</tr>";
+                    communoty_list += "<tr>";
+                    communoty_list += "<td>" + (i + 1) + "</td>";
+                    communoty_list += "<td>" + pageInfo.list[i].cname + "</td>";
+                    communoty_list += "<td>" + pageInfo.list[i].mname + "</td>";
+                    communoty_list += "<td>" + pageInfo.list[i].amount + "</td>";
+                    communoty_list += "<td>" + pageInfo.list[i].activityNums + "</td>";
+                    communoty_list += "<td>" + pageInfo.list[i].formatDate + "</td>";
+                    communoty_list += "<td>" + pageInfo.list[i].level + "</td>";
+                    communoty_list += "</tr>";
                 }
                 $(".table tr:gt(0)").remove();
-                $("table").append(activity_list);
+                $("table").append(communoty_list);
 
                 //分页导航条
                 var pages_list = "";
@@ -235,119 +228,32 @@
             }, "json");
         }
 
-        //分页
-        <%--$(function () {--%>
-        <%--    var list = "";--%>
-        <%--    //首页--%>
-        <%--    if (${activityPageInfo.isFirstPage}) {--%>
-        <%--        list += "<li>首页</li>";--%>
-        <%--    } else {--%>
-        <%--        list += "<li><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=1&pageSize=10'>首页</a></li>";--%>
-        <%--    }--%>
-
-        <%--    //上一页--%>
-        <%--    if (${activityPageInfo.hasPreviousPage}) {--%>
-        <%--        list += "<li><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=${activityPageInfo.prePage}&pageSize=10'>上一页</a></li>";--%>
-        <%--    } else {--%>
-        <%--        list += "<li>上一页</li>";--%>
-        <%--    }--%>
-        <%--    //页码序列--%>
-        <%--    if (${activityPageInfo.pages==0})--%>
-        <%--    {--%>
-        <%--        list += "<li class='thisclass'>1</li>";--%>
-        <%--    }--%>
-        <%--    for (var i = 1; i <= ${activityPageInfo.pages}; i++) {--%>
-        <%--        if (i ==${activityPageInfo.pageNum}) {--%>
-        <%--            list += "<li class='thisclass'><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=" + i + "&pageSize=10'>" + i + "</a></li>";--%>
-        <%--        } else {--%>
-        <%--            list += "<li><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=" + i + "&pageSize=10'>" + i + "</a></li>";--%>
-        <%--        }--%>
-        <%--    }--%>
-        <%--    //下一页--%>
-        <%--    if (${activityPageInfo.hasNextPage}) {--%>
-        <%--        list += "<li><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=${activityPageInfo.nextPage}&pageSize=10'>下一页</a></li>";--%>
-        <%--    } else {--%>
-        <%--        list += "<li>下一页</li>";--%>
-        <%--    }--%>
-
-        <%--    //尾页--%>
-        <%--    if (${activityPageInfo.isLastPage}) {--%>
-        <%--        list += "<li>尾页</li>";--%>
-        <%--    } else {--%>
-        <%--        list += "<li><a href='${pageContext.request.contextPath}/activity/findAll?currentPage=${activityPageInfo.navigateLastPage}&pageSize=10'>尾页</a></li>";--%>
-        <%--    }--%>
-
-        <%--    $(".page>ul").html(list);--%>
-
-
-        <%--});--%>
     </script>
 </head>
 
 <body>
-<%--<jsp:include page="header.jsp" flush="true"/>--%>
 <%@ include file="header.html" %>
 
 <div class="container">
     <div class="row">
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
-                aria-expanded="false" aria-controls="collapseExample" id="activity_search">
-            条件查询
-        </button>
-        <div class="collapse" id="collapseExample">
-            <div class="well">
-                <form class="form-inline"  id="conditionSearch">
-                    <div class="form-group">
-                        <label for="activityName">活动名称</label>
-                        <input type="text" class="form-control" id="activityName" name="activityName"
-                               placeholder="Activity Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="activityTime">活动时间</label>
-                        <input type="text" class="form-control" id="activityTime" name="activityTime"
-                               placeholder="yyyy-MM-dd">
-                    </div>
-                    <div class="form-group">
-                        <label for="activityPlace">活动地点</label>
-                        <input type="text" class="form-control" id="activityPlace" name="activityPlace"
-                               placeholder="Activity Place">
-                    </div>
-                    <div class="form-group">
-                        <label for="community">所属社团</label>
-                        <input type="text" class="form-control" id="community" name="community" placeholder="Community">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">查询</button>
-                </form>
+        <form class="form-inline" id="communitySearch">
+            <div class="form-group">
+                <input type="text" class="form-control" id="keyword" placeholder="keyword">
             </div>
-        </div>
+            <button type="submit" class="btn btn-primary">搜索</button>
+        </form>
     </div>
     <div class="row">
         <table class="table table-bordered" style="color:#0f0f0f;margin-top: 20px;table-layout: fixed">
             <tr class="success">
                 <th style="width: 5%">序号</th>
-                <th style="width: 21%">活动名称</th>
-                <th style="width: 20%">活动时间</th>
-                <th style="width: 21%">活动地点</th>
-                <th style="width: 15%">所属社团</th>
-                <th style="width: 8%">参与人数</th>
-                <th style="width: 10%">操作</th>
+                <th style="width: 20%">社团名称</th>
+                <th style="width: 15%">社团负责人</th>
+                <th style="width: 12%">社团人数</th>
+                <th style="width: 13%">社团活动数量</th>
+                <th style="width: 20%">社团成立时间</th>
+                <th style="width: 15%">社团等级</th>
             </tr>
-            <%--            <c:forEach items="${activityPageInfo.list}" var="activity" varStatus="s">--%>
-            <%--                <tr>--%>
-            <%--                    <td>${s.count}</td>--%>
-            <%--                    <td>${activity.name}</td>--%>
-            <%--                    <td>${activity.formatDate}</td>--%>
-            <%--                    <td>${activity.place}</td>--%>
-            <%--                    <td>${activity.cname}</td>--%>
-            <%--                    <td>${activity.amount}</td>--%>
-            <%--                    <td>--%>
-            <%--                        <a class="btn btn-primary"--%>
-            <%--                           href="${pageContext.request.contextPath}/activity/activityDetail?activityId=${activity.id}"--%>
-            <%--                           role="button">查看详情</a>--%>
-            <%--                    </td>--%>
-            <%--                </tr>--%>
-            <%--            </c:forEach>--%>
 
         </table>
     </div>

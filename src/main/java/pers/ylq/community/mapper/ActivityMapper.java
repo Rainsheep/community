@@ -41,4 +41,7 @@ public interface ActivityMapper {
     @Select("select * from tb_activity where id=#{activityId}")
     @ResultMap("activityMap")
     Activity findActivityById(Integer activityId);
+
+    @Select("select count(id) from tb_activity where belong=#{cid}")
+    Integer findCountByCid(Integer cid);
 }

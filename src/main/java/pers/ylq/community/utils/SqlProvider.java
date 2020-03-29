@@ -41,13 +41,24 @@ public class SqlProvider {
         //SELECT * FROM tb_notice WHERE title LIKE '%华北%' OR introduction LIKE '%华北%'
         // OR content LIKE '%华北%'
         // OR (aid IN (SELECT aid FROM tb_admin WHERE real_name LIKE '%杨%'))
+        // OR datetime LIKE '%1%'
         // ORDER BY DATETIME DESC
         String sql = "select * from tb_notice ";
         if (condition.getKeyword() != null && !condition.getKeyword().equals("")) {
-            sql += " WHERE title LIKE '%" + condition.getKeyword() + "%' OR introduction LIKE '%" + condition.getKeyword() + "%' OR content LIKE '%" + condition.getKeyword() + "%' OR (aid IN (SELECT aid FROM tb_admin WHERE real_name LIKE '%" + condition.getKeyword() + "%')) ";
+            sql += " WHERE title LIKE '%" + condition.getKeyword() + "%' OR introduction LIKE '%" + condition.getKeyword() + "%' OR content LIKE '%" + condition.getKeyword() + "%' OR (aid IN (SELECT aid FROM tb_admin WHERE real_name LIKE '%" + condition.getKeyword() + "%')) OR datetime LIKE binary '%"+condition.getKeyword()+"%' ";
         }
         sql += " order by datetime DESC";
         //System.out.println(sql);
+        return sql;
+    }
+
+    public String selectAllCommunity(String keyword){
+        String sql="SELECT * FROM tb_community ";
+        if(keyword!=null && keyword.length()>0){
+            sql+="WHERE cname LIKE '%"+keyword+"%' OR mname LIKE '%"+keyword+"%' OR amount LIKE '%"+keyword+"%' OR hold_time LIKE binary '%"+keyword+"%' OR LEVEL LIKE '%"+keyword+"%' ";
+        }
+        sql+=" order by hold_time DESC";
+        System.out.println(sql);
         return sql;
     }
 }

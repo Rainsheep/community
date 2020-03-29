@@ -25,7 +25,7 @@ public class NoticeController {
     PageInfo findAll(NoticeConditionSearch condition) {
         //System.out.println(condition);
         PageInfo noticePageInfo = noticeService.findAll(condition);
-        System.out.println(noticePageInfo.getList().size());
+        //System.out.println(noticePageInfo.getList().size());
         return noticePageInfo;
     }
 
