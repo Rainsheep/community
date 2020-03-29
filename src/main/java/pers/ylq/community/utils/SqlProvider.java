@@ -22,7 +22,7 @@ public class SqlProvider {
             sql += " and name like '%" + condition.getActivityName() + "%'";
         }
         if (condition.getActivityTime() != null && !condition.getActivityTime().equals("")) {
-            sql += " and datetime like '%" + condition.getActivityTime() + "%'";
+            sql += " and datetime like binary '%" + condition.getActivityTime() + "%'";
         }
         if (condition.getActivityPlace() != null && !condition.getActivityPlace().equals("")) {
             sql += " and place like '%" + condition.getActivityPlace() + "%'";
