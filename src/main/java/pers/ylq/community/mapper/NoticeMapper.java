@@ -1,12 +1,13 @@
 package pers.ylq.community.mapper;
 
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 import pers.ylq.community.dto.NoticeConditionSearch;
 import pers.ylq.community.entity.Notice;
 import pers.ylq.community.utils.SqlProvider;
 
 import java.util.List;
-
+@Repository
 public interface NoticeMapper {
     // 条件查询所有公告
     @SelectProvider(type = SqlProvider.class,method = "selectAllNotice")

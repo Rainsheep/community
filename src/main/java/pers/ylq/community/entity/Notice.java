@@ -40,8 +40,6 @@ public class Notice implements Serializable {
 
     public String getSimpleContent() {
         if (content.length() <= 150) return content;
-        content = content.substring(0, 150) + "...";
-        content = content.replaceAll("\n", " ");
-        return content;
+        return (content.substring(0, 150) + "...").replaceAll("\n", " ");
     }
 }

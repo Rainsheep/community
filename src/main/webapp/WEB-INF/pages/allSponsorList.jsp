@@ -2,13 +2,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>学生社团</title>
+    <title>赞助人员</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/base.css"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/animate.css"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/slide.css"/>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css"/>
-    <%--    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/pages.css"/>--%>
     <script src="${pageContext.request.contextPath}/js/jquery-3.2.1.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/mc.js"></script>
     <script src="${pageContext.request.contextPath}/js/wow.min.js"></script>
@@ -101,7 +100,7 @@
             color: #fff;
         }
 
-        #communitySearch {
+        #sponsorSearch {
             float: right;
             margin-top: 20px;
         }
@@ -126,11 +125,11 @@
         //导航
         $(function () {
             $(".navbar-nav>li").removeClass("current");
-            $("#allCommunity").addClass("current");
+            $("#allSponsor").addClass("current");
         });
         //AJAX局部刷新
         $(function () {
-            $("#communitySearch").submit(function () {
+            $("#sponsorSearch").submit(function () {
                 load(1);
                 return false;
             });
@@ -140,26 +139,27 @@
         function load(currentPage) {
             var keyword = $("#keyword").val();
             //ajax 表格和分页
-            $.post("${pageContext.request.contextPath}/community/findAll", {
+            $.post("${pageContext.request.contextPath}/sponsorView/findAll", {
                 "currentPage": currentPage,
                 "pageSize": 8,
                 "keyword": keyword
             }, function (pageInfo) {
                 //表格内容
-                var communoty_list = "";
+                var sponsor_list = "";
                 for (var i = 0; i < pageInfo.list.length; i++) {
-                    communoty_list += "<tr>";
-                    communoty_list += "<td>" + (i + 1) + "</td>";
-                    communoty_list += "<td>" + pageInfo.list[i].cname + "</td>";
-                    communoty_list += "<td>" + pageInfo.list[i].mname + "</td>";
-                    communoty_list += "<td>" + pageInfo.list[i].amount + "</td>";
-                    communoty_list += "<td>" + pageInfo.list[i].activityNums + "</td>";
-                    communoty_list += "<td>" + pageInfo.list[i].formatDate + "</td>";
-                    communoty_list += "<td>" + pageInfo.list[i].level + "</td>";
-                    communoty_list += "</tr>";
+                    sponsor_list += "<tr>";
+                    sponsor_list += "<td style='vertical-align:middle'>" + (i + 1) + "</td>";
+                    sponsor_list += "<td style='vertical-align:middle'>" + pageInfo.list[i].realName + "</td>";
+                    sponsor_list += "<td style='vertical-align:middle'>" + pageInfo.list[i].activityNums + "</td>";
+                    sponsor_list += "<td style='vertical-align:middle'>" + pageInfo.list[i].formatMoneySum + "</td>";
+                    sponsor_list += "<td style='vertical-align:middle'>" + pageInfo.list[i].belong + "</td>";
+                    sponsor_list += "<td style='vertical-align:middle'>" + pageInfo.list[i].phone + "</td>";
+                    sponsor_list += "<td style='vertical-align:middle'>" + pageInfo.list[i].address + "</td>";
+                    sponsor_list+="<td style='vertical-align:middle'><a class='btn btn-primary' href='"+pageInfo.list[i].detail+"'>查看详情</a></td>"
+                    sponsor_list += "</tr>";
                 }
                 $(".table tr:gt(0)").remove();
-                $("table").append(communoty_list);
+                $("table").append(sponsor_list);
 
                 //分页导航条
                 var pages_list = "";
@@ -236,7 +236,7 @@
 
 <div class="container">
     <div class="row">
-        <form class="form-inline" id="communitySearch">
+        <form class="form-inline" id="sponsorSearch">
             <div class="form-group">
                 <input type="text" class="form-control" id="keyword" placeholder="keyword">
             </div>
@@ -247,12 +247,13 @@
         <table class="table table-bordered" style="color:#0f0f0f;margin-top: 20px;table-layout: fixed">
             <tr class="success">
                 <th style="width: 5%">序号</th>
-                <th style="width: 20%">社团名称</th>
-                <th style="width: 15%">社团负责人</th>
-                <th style="width: 12%">社团人数</th>
-                <th style="width: 13%">社团活动数量</th>
-                <th style="width: 20%">社团成立时间</th>
-                <th style="width: 15%">社团等级</th>
+                <th style="width: 7%">赞助人</th>
+                <th style="width: 10%">赞助活动数量</th>
+                <th style="width: 10%">赞助总金额</th>
+                <th style="width: 15%">所属公司</th>
+                <th style="width: 13%">联系方式</th>
+                <th style="width: 30%">企业地址</th>
+                <th style="width: 10%">官网链接</th>
             </tr>
 
         </table>

@@ -156,13 +156,13 @@
                 var activity_list = "";
                 for (var i = 0; i < pageInfo.list.length; i++) {
                     activity_list += "<tr>";
-                    activity_list += '<td style="display:table-cell; vertical-align:middle">' + (i + 1) + "</td>";
-                    activity_list += "<td style='display:table-cell; vertical-align:middle' class='oneline' title="+pageInfo.list[i].name+">" + pageInfo.list[i].name + "</td>";
-                    activity_list += "<td style='display:table-cell; vertical-align:middle'>" + pageInfo.list[i].formatDate + "</td>";
-                    activity_list += "<td style='display:table-cell; vertical-align:middle' class='oneline' title="+pageInfo.list[i].place+">" + pageInfo.list[i].place + "</td>";
-                    activity_list += "<td style='display:table-cell; vertical-align:middle'>" + pageInfo.list[i].cname + "</td>";
-                    activity_list += "<td style='display:table-cell; vertical-align:middle'>" + pageInfo.list[i].amount + "</td>";
-                    activity_list += "<td style='display:table-cell; vertical-align:middle'><a class='btn btn-primary' href='${pageContext.request.contextPath}/activity/activityDetail?activityId=" + pageInfo.list[i].id + "'>查看详情</a></td>";
+                    activity_list += "<td style='vertical-align:middle'>" + (i + 1) + "</td>";
+                    activity_list += "<td style='vertical-align:middle' class='oneline' title="+pageInfo.list[i].name+">" + pageInfo.list[i].name + "</td>";
+                    activity_list += "<td style='vertical-align:middle'>" + pageInfo.list[i].formatDate + "</td>";
+                    activity_list += "<td style='vertical-align:middle' class='oneline' title="+pageInfo.list[i].place+">" + pageInfo.list[i].place + "</td>";
+                    activity_list += "<td style='vertical-align:middle'>" + pageInfo.list[i].cname + "</td>";
+                    activity_list += "<td style='vertical-align:middle'>" + pageInfo.list[i].amount + "</td>";
+                    activity_list += "<td style='vertical-align:middle'><a class='btn btn-primary' href='${pageContext.request.contextPath}/activity/activityDetail?activityId=" + pageInfo.list[i].id + "'>查看详情</a></td>";
                     activity_list += "</tr>";
                 }
                 $(".table tr:gt(0)").remove();

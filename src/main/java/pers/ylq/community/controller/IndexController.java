@@ -22,5 +22,10 @@ public class IndexController {
         return "allCommunityList";
     }
 
+    @RequestMapping("/allSponsorList")
+    public String allSponsorList(){
+        return "allSponsorList";
+    }
+
 
 }

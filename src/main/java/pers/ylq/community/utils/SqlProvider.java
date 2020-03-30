@@ -58,7 +58,15 @@ public class SqlProvider {
             sql+="WHERE cname LIKE '%"+keyword+"%' OR mname LIKE '%"+keyword+"%' OR amount LIKE '%"+keyword+"%' OR hold_time LIKE binary '%"+keyword+"%' OR LEVEL LIKE '%"+keyword+"%' ";
         }
         sql+=" order by hold_time DESC";
-        System.out.println(sql);
+        //System.out.println(sql);
+        return sql;
+    }
+
+    public String selectAllSponsor(String keyword){
+        String sql="SELECT * FROM tb_sponsor ";
+        if(keyword!=null && keyword.length()>0){
+            sql+="where real_name like '%"+keyword+"%' or belong like '%"+keyword+"%' or phone like '%"+keyword+"%' or address like '%"+keyword+"%' ";
+        }
         return sql;
     }
 }
