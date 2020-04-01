@@ -27,6 +27,7 @@
     <mvc:resources mapping="/images/**" location="/images/"/>
     <mvc:resources mapping="/js/**" location="/js/"/>
     <mvc:resources mapping="/fonts/**" location="/fonts/"/>
+    <mvc:resources mapping="/layuiadmin/**" location="/layuiadmin/"/>
 
 
     <!-- 开启对SpringMVC注解的支持 -->

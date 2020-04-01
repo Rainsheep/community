@@ -139,7 +139,7 @@
         function load(currentPage) {
             var keyword = $("#keyword").val();
             //ajax 表格和分页
-            $.post("${pageContext.request.contextPath}/sponsorView/findAll", {
+            $.post("${pageContext.request.contextPath}/sponsor/findAll", {
                 "currentPage": currentPage,
                 "pageSize": 8,
                 "keyword": keyword

@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pers.ylq.community.dto.LoginDTO;
 import pers.ylq.community.dto.SponsorConditionSearch;
 import pers.ylq.community.entity.Sponsor;
 import pers.ylq.community.mapper.SponsorMapper;
@@ -28,5 +29,11 @@ public class SponsorServiceImpl implements SponsorService {
         List<Sponsor> sponsors = sponsorMapper.findAll(condition.getKeyword());
         PageInfo<Sponsor> sponsorPageInfo = new PageInfo<>(sponsors);
         return sponsorPageInfo;
+    }
+
+    @Override
+    public Sponsor findSponsorBySnameAndPassword(LoginDTO loginDTO) {
+        Sponsor sponsor = sponsorMapper.findSponsorBySnameAndPassword(loginDTO.getUsername(), loginDTO.getPassword());
+        return sponsor;
     }
 }

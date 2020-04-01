@@ -1,9 +1,6 @@
 package pers.ylq.community.mapper;
 
-import org.apache.ibatis.annotations.One;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.SelectProvider;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 import pers.ylq.community.entity.Sponsor;
 import pers.ylq.community.utils.SqlProvider;
@@ -27,4 +24,8 @@ public interface SponsorMapper {
             @Result(property = "detail",column = "detail")
     })
     List<Sponsor> findAll(String keyword);
+
+    @Select("select * from tb_sponsor where sname=#{arg0} and password=#{arg1}")
+    @ResultMap("sponsorMap")
+    Sponsor findSponsorBySnameAndPassword(String sname,String password);
 }

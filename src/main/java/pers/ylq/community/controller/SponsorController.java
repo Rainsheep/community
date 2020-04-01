@@ -9,13 +9,15 @@ import pers.ylq.community.dto.SponsorConditionSearch;
 import pers.ylq.community.service.SponsorService;
 
 @Controller
-@RequestMapping("/sponsorView")
+@RequestMapping("/sponsor")
 public class SponsorController {
     @Autowired
     private SponsorService sponsorService;
+
     @RequestMapping("findAll")
     public @ResponseBody
     PageInfo findAll(SponsorConditionSearch condition){
         return sponsorService.findAll(condition);
     }
+
 }
