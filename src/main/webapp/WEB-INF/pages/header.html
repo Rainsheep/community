@@ -34,7 +34,18 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
+                <%
+                    if(request.getSession().getAttribute("user")==null){
+                %>
                 <li><a href="${pageContext.request.contextPath}/login/index" style="color: white;">登录</a></li>
+                <%
+                    } else {
+                %>
+                <li style="padding: 0px"><a href="${pageContext.request.contextPath}/background" style="color: white;">管理</a></li>
+                <li style="padding: 0px"><a href="${pageContext.request.contextPath}/logout" style="color: white;">登出</a></li>
+                <%
+                    }
+                %>
 
             </ul>
         </div><!-- /.navbar-collapse -->

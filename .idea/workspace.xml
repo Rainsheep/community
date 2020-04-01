@@ -7,203 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ca91f71-6fa2-481d-9259-9f16d62ca1c1" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/ManageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/ManagerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/SupportController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/dto/LoginDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/dto/ResultVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/utils/ImageVerificationCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/layui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/layui.mobile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/code.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/laydate/default/font.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layer/default/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layer/default/layer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layim/html/chatlog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layim/html/find.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layim/html/getmsg.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layim/html/msgbox.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layim/layim.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layim/mobile/layim.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layim/skin/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layim/skin/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layim/skin/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layim/skin/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layim/skin/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layim/skin/logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/css/modules/layim/voice/default.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/font/iconfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/font/iconfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/font/iconfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/font/iconfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/font/iconfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/0.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/10.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/11.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/12.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/13.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/14.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/15.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/16.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/17.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/18.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/19.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/20.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/21.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/22.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/23.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/24.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/25.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/26.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/27.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/28.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/29.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/3.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/30.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/31.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/32.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/33.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/34.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/35.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/36.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/37.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/38.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/39.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/4.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/40.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/41.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/42.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/43.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/44.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/45.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/46.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/47.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/48.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/49.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/5.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/50.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/51.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/52.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/53.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/54.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/55.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/56.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/57.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/58.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/59.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/6.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/60.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/61.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/62.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/63.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/64.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/65.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/66.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/67.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/68.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/69.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/7.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/70.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/71.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/8.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/images/face/9.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/all-mobile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/carousel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/code.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/colorpicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/element.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/flow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/laydate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/layedit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/layer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/layim.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/laypage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/laytpl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/mobile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/mobile/layer-mobile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/mobile/layim-mobile-open.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/mobile/layim-mobile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/mobile/upload-mobile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/mobile/zepto.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/rate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/slider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/table.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/transfer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/tree.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/upload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/lay/modules/util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/layui.all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/layui/layui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/lib/admin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/lib/extend/dtree.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/lib/extend/echarts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/lib/extend/echartsTheme.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/lib/extend/transferTable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/lib/extend/treeGrid.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/lib/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/lib/view.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/modules/common.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/modules/console.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/modules/contlist.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/modules/forum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/modules/im.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/modules/message.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/modules/sample.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/modules/senior.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/modules/set.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/modules/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/modules/useradmin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/modules/workorder.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/style/admin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/style/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/style/res/bg-none.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/style/res/layui-logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/style/res/logo-black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/style/res/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/style/res/template/character.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/style/res/template/huge.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/style/res/template/portrait.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/style/template.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/tpl/layim/demo.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/tpl/system/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/tpl/system/get.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/tpl/system/more.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/tpl/system/theme.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/tpl/system/说明.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layuiadmin/tpl/说明.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/SponsorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/SponsorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/dto/CommunityConditionSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/dto/CommunityConditionSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/AdminMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/ManagerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/ManagerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/SponsorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/SponsorMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/ManagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/ManagerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/SponsorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/SponsorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/impl/AdminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/impl/ManagerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/impl/ManagerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/impl/SponsorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/impl/SponsorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/springmvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/springmvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/allSponsorList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/allSponsorList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/activityDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/activityDetail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -221,8 +29,24 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="148" column="91" selection-start-line="148" selection-start-column="91" selection-end-line="148" selection-end-column="91" />
+            <state relative-caret-position="285">
+              <caret line="142" column="92" lean-forward="true" selection-start-line="142" selection-start-column="92" selection-end-line="142" selection-end-column="92" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="41" column="28" lean-forward="true" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#li#0;n#ul#1;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#1;n#ul#1;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#1;n#ul#1;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#2;n#ul#1;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#li#2;n#ul#1;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -269,8 +93,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/ActivityMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/CommunityMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/impl/NoticeServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/CommunityService.java" />
@@ -289,10 +111,8 @@
         <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/entity/Sponsor.java" />
         <option value="$PROJECT_DIR$/src/main/resources/springmvc.xml" />
         <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/utils/test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/IndexController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/layuiadmin/modules/user.js" />
         <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/utils/ImageVerificationCode.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/header.html" />
         <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/dto/CommunityConditionSearch.java" />
         <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/dto/LoginDTO.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/layuiadmin/lib/index.js" />
@@ -319,6 +139,10 @@
         <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/AdminController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/ManagerMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/SponsorMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/test.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/activityDetail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/IndexController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/header.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp" />
       </list>
     </option>
@@ -374,8 +198,8 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
+    <option name="x" value="223" />
+    <option name="y" value="30" />
     <option name="width" value="1565" />
     <option name="height" value="1050" />
   </component>
@@ -453,6 +277,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="community" type="b2602c69:ProjectViewProjectNode" />
+              <item name="community" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="layuiadmin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -471,16 +303,6 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="community" type="b2602c69:ProjectViewProjectNode" />
-              <item name="community" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -788,7 +610,7 @@
       <workItem from="1585465827459" duration="27712000" />
       <workItem from="1585552298680" duration="11831000" />
       <workItem from="1585595058683" duration="1002000" />
-      <workItem from="1585739355617" duration="19865000" />
+      <workItem from="1585739355617" duration="25399000" />
     </task>
     <task id="LOCAL-00001" summary="开启毕设，先搭个环境">
       <created>1584691305335</created>
@@ -930,7 +752,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585591324213</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="初试layuiAdmin,完成了登录功能">
+      <created>1585761397547</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1585761397547</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -966,7 +795,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166326000" />
+    <option name="totallyTimeSpent" value="171860000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -981,7 +810,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49291784" weight="0.23592493" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49291784" visible="true" weight="0.13873994" />
       <window_info id="Designer" order="1" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -993,7 +822,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.3101983" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.28895184" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.20113315" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
@@ -1025,7 +854,7 @@
       <window_info anchor="right" id="Structure" order="11" sideWeight="0.5007072" side_tool="true" weight="0.17493297" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49291784" visible="true" weight="0.23592493" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49291784" visible="true" weight="0.21179625" />
       <window_info id="Designer" order="1" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -1037,7 +866,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932975" weight="0.3101983" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.28895184" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.20113315" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
@@ -1097,24 +926,10 @@
     <MESSAGE value="完成了学生社团" />
     <MESSAGE value="修复了查询时间时含中文的bug" />
     <MESSAGE value="完成了赞助人员，基本已经完成了普通游客部分" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了赞助人员，基本已经完成了普通游客部分" />
+    <MESSAGE value="初试layuiAdmin,完成了登录功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="初试layuiAdmin,完成了登录功能" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/layuiadmin/lib/extend/dtree.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="35" column="39" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/springmvc.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -1155,13 +970,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/layuiadmin/json/user/sms.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="80" column="75" selection-start-line="80" selection-start-column="75" selection-end-line="80" selection-end-column="75" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pers/ylq/community/entity/Activity.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1256,13 +1064,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/layuiadmin/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1433,22 +1234,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#252#253#0" expanded="true" />
-            <element signature="e#282#283#0" expanded="true" />
-            <element signature="e#359#360#0" expanded="true" />
-            <element signature="e#399#400#0" expanded="true" />
-            <element signature="e#472#473#0" expanded="true" />
-            <element signature="e#510#511#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/CommunityController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -1463,16 +1248,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#383#384#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="82" column="60" selection-start-line="82" selection-start-column="60" selection-end-line="82" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1501,10 +1276,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/layuiadmin/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/test.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/activityDetail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="15" column="98" selection-start-line="15" selection-start-column="98" selection-end-line="15" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="46" column="35" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#252#253#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+            <element signature="e#472#473#0" expanded="true" />
+            <element signature="e#510#511#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="87" column="65" lean-forward="true" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="41" column="28" lean-forward="true" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#1;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#1;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#1;n#ul#1;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#2;n#ul#1;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#2;n#ul#1;n#div#1;n#div#0;n#nav#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="148" column="91" selection-start-line="148" selection-start-column="91" selection-end-line="148" selection-end-column="91" />
+        <state relative-caret-position="285">
+          <caret line="142" column="92" lean-forward="true" selection-start-line="142" selection-start-column="92" selection-end-line="142" selection-end-column="92" />
         </state>
       </provider>
     </entry>

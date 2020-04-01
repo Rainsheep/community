@@ -14,7 +14,6 @@
     <script src="${pageContext.request.contextPath}/js/wow.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/common.js"></script>
-
     <style>
         .nav li {
             padding-left: 22px;
@@ -30,6 +29,7 @@
             width: 262px;
             height: 180px;
         }
+
     </style>
     <script>
         $(function () {

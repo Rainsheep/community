@@ -140,15 +140,7 @@
                             , icon: 1
                             , time: 1000
                         }, function () {
-
-                            if(obj.field.userType==="1"){
-                                location.href = '${pageContext.request.contextPath}/admin/index';
-                            }else if(obj.field.userType==="2"){
-                                location.href = '${pageContext.request.contextPath}/manage/index';
-                            }else if(obj.field.userType==="3"){
-                                location.href = '${pageContext.request.contextPath}/support/index';
-                            }
-
+                            location.href = '${pageContext.request.contextPath}/background';
                         });
                     }
 
