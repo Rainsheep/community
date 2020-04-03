@@ -45,6 +45,12 @@ public class Activity implements Serializable {
             brDetail = detail.replaceAll("\r\n", "<br>");
         }
         return brDetail;
-
+    }
+    public String getSimpleDetail(){
+        if(detail.length()>=45){
+            return detail.substring(0, 45)+"...";
+        }else{
+            return detail;
+        }
     }
 }

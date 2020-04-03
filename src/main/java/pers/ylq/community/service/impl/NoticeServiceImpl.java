@@ -5,6 +5,7 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pers.ylq.community.dto.NoticeConditionSearch;
+import pers.ylq.community.dto.ResultVo;
 import pers.ylq.community.entity.Notice;
 import pers.ylq.community.mapper.NoticeMapper;
 import pers.ylq.community.service.NoticeService;
@@ -31,5 +32,17 @@ public class NoticeServiceImpl implements NoticeService {
     @Override
     public Notice findNoticeById(Integer noticeId) {
         return noticeMapper.findNoticeById(noticeId);
+    }
+
+    @Override
+    public ResultVo deleteNoticeById(Integer noticeId) {
+        ResultVo result=null;
+        Integer flag = noticeMapper.deleteNoticeById(noticeId);
+        if(flag<=0){
+            result=new ResultVo<>(0,1,"删除失败!",null);
+        }else{
+            result=new ResultVo<>(0,0,"删除成功!",null);
+        }
+        return result;
     }
 }

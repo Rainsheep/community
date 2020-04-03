@@ -44,11 +44,12 @@ public class ActivityController {
      * 查看活动详情
      */
     @RequestMapping("/activityDetail")
-    public String activityDetail(Integer activityId, Model model) {
+    public String activityDetail(Integer activityId,Integer onlyContent, Model model) {
         Activity activity = activityService.findActivityById(activityId);
         //System.out.println(activity.getDetail());
         //System.out.println(activity.getImages().size());
         model.addAttribute("activity", activity);
+        model.addAttribute("onlyContent",onlyContent);
         return "activityDetail";
     }
 }

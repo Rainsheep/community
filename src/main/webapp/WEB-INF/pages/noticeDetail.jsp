@@ -123,14 +123,24 @@
 </head>
 
 <body>
-<%@ include file="header.html" %>
+<c:if test="${empty onlyContent}">
+    <%@ include file="header.html" %>
+</c:if>
 
 <!--内容开始 -->
-<div class="wrap" style="margin-top: 50px">
+<c:if test="${empty onlyContent}">
+    <div class="wrap" style="margin-top: 50px">
+</c:if>
+<c:if test="${not empty onlyContent}">
+    <div class="wrap">
+</c:if>
+
     <div class="wrap_left1">
-        <div class="ltop">
-            <h3>通知详情</h3>
-        </div>
+        <c:if test="${empty onlyContent}">
+            <div class="ltop">
+                <h3>通知详情</h3>
+            </div>
+        </c:if>
         <!-- 新闻详情 -->
         <div class="news_content">
             <h1>${notice.title}</h1>
@@ -142,7 +152,9 @@
     </div>
 </div>
 
-<%@ include file="footer.html" %>
+<c:if test="${empty onlyContent}">
+    <%@ include file="footer.html" %>
+</c:if>
 <!--置顶开始-->
 <div class="fix-nav" id="fix-nav" style="display: block;">
     <div class="fix-nav-wrap"><img class="i-totop" src="${pageContext.request.contextPath}/images/to_top.png"/>

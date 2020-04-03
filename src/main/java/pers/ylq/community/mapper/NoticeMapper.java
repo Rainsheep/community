@@ -26,4 +26,7 @@ public interface NoticeMapper {
     @Select("select * from tb_notice where id=#{noticeId}")
     @ResultMap("noticeMap")
     Notice findNoticeById(Integer noticeId);
+
+    @Delete("delete from tb_notice where id=#{noticeId}")
+    Integer deleteNoticeById(Integer noticeId);
 }

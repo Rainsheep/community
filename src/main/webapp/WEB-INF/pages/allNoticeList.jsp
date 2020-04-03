@@ -14,6 +14,7 @@
     <script src="${pageContext.request.contextPath}/js/wow.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/common.js"></script>
+    <script src="${pageContext.request.contextPath}/js/layer/layer.js"></script>
 
     <style>
         .nav li {
@@ -140,30 +141,41 @@
         });
 
         function load(currentPage) {
-            var keyword=$("#keyword").val();
+            var keyword = $("#keyword").val();
             // alert(keyword);
             //ajax 表格和分页
             $.post("${pageContext.request.contextPath}/notice/findAll", {
                 "currentPage": currentPage,
                 "pageSize": 8,
-                "keyword":keyword
+                "keyword": keyword
             }, function (pageInfo) {
                 // console.log(pageInfo);
                 //表格内容
                 var notice_list = "";
                 for (var i = 0; i < pageInfo.list.length; i++) {
-                    notice_list+='<div class="news-item">';
-                    notice_list+='<div class="date">';
-                    notice_list+='<div class="day">'+pageInfo.list[i].formatDay+'</div>';
-                    notice_list+='<div class="month">'+pageInfo.list[i].formatMonth+'</div>';
-                    notice_list+='</div>';
-                    notice_list+='<div class="description">';
-                    notice_list+='<h2>【通知】';
-                    notice_list+='<a href="${pageContext.request.contextPath}/notice/noticeDetail?noticeId='+pageInfo.list[i].id+'">'+pageInfo.list[i].title+'</a>';
-                    notice_list+='</h2>';
-                    notice_list+='<div class="cont"><div class="words"><div class="detail">';
-                    notice_list+=pageInfo.list[i].simpleContent;
-                    notice_list+='</div></div></div></div></div>';
+                    notice_list += '<div class="news-item">';
+                    notice_list += '<div class="date">';
+                    notice_list += '<div class="day">' + pageInfo.list[i].formatDay + '</div>';
+                    notice_list += '<div class="month">' + pageInfo.list[i].formatMonth + '</div>';
+                    notice_list += '</div>';
+                    notice_list += '<div class="description">';
+                    notice_list += '<h2>【通知】';
+                    <c:if test="${empty isAdmin}">
+                    notice_list += '<a href="${pageContext.request.contextPath}/notice/noticeDetail?noticeId=' + pageInfo.list[i].id + '">' + pageInfo.list[i].title + '</a>';
+                    </c:if>
+
+                    <c:if test="${not empty isAdmin}">
+                    notice_list += '<a href="${pageContext.request.contextPath}/notice/noticeDetail?onlyContent=1&noticeId=' + pageInfo.list[i].id + '">' + pageInfo.list[i].title + '</a>';
+                    </c:if>
+                    notice_list += '</h2>';
+                    notice_list += '<div class="cont"><div class="words"><div class="detail">';
+                    notice_list += pageInfo.list[i].simpleContent;
+                    notice_list += '</div></div>';
+                    <c:if test="${not empty isAdmin}">
+                    notice_list += '<button type="button" class="btn btn-default btn-xs" style="background-color: #30a89d;color: white" onclick="updateNotice(' + pageInfo.list[i].id + ')">修改</button>';
+                    notice_list += '<button type="button" class="btn btn-default btn-xs" style="background-color: #ff5722;color: white;margin-left: 10px" onclick="deleteNotice(' + pageInfo.list[i].id + ');">删除</button>';
+                    </c:if>
+                    notice_list += '</div></div></div>';
                 }
                 $(".news-list div:gt(0)").remove();
                 $(".news-list").append(notice_list);
@@ -236,11 +248,26 @@
             }, "json");
         }
 
+        function deleteNotice(id) {
+            layer.confirm('确定要删除吗?', {icon: 3, title: '提示'}, function (index) {
+                $.post("${pageContext.request.contextPath}/notice/deleteNotice", {
+                    "noticeId": id
+                }, function (data) {
+                    layer.close(index);
+                    layer.msg(data.msg);
+                    load(1);
+                });
+            });
+        }
+
     </script>
 </head>
 
 <body>
-<%@ include file="header.html" %>
+<c:if test="${empty isAdmin}">
+    <%@ include file="header.html" %>
+</c:if>
+
 
 <!--内容开始 -->
 <div class="wrap" style="margin-top: 50px">
@@ -253,7 +280,7 @@
                     <div class="form-group">
                         <input type="text" class="form-control" id="keyword" placeholder="keyword">
                     </div>
-                    <button type="submit" class="btn btn-primary" >搜索</button>
+                    <button type="submit" class="btn btn-primary">搜索</button>
                 </form>
             </div>
         </div>
@@ -262,24 +289,32 @@
             <!-- 新闻列表 -->
             <div class="news-list">
                 <!-- 重复内容 -->
-                <div class="news-item">
-                    <div class="date">
-                        <div class="day">28</div>
-                        <div class="month">2020-03</div>
-                    </div>
-                    <div class="description">
-                        <h2>【通知】
-                            <a href="#">关于2020年清明节放假及学校值班安排的通知</a>
-                        </h2>
-                        <div class="cont">
-                            <div class="words">
-                                <div class="detail" >
-                                    校属各单位：根据《河南省教育厅办公室关于2020年清明节放假安排的通知》（教办函〔2020〕86号）精神，为便于全校师生及早合理安排工作、学习，现将我校2020年清明节放假及学校值班安排通知如下：一、放假安排及相关要求（一）放假时间4月4日至6日放假调休，共3天。（二）相关...
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<%--                <div class="news-item">--%>
+<%--                    <div class="date">--%>
+<%--                        <div class="day">28</div>--%>
+<%--                        <div class="month">2020-03</div>--%>
+<%--                    </div>--%>
+<%--                    <div class="description">--%>
+<%--                        <h2>【通知】--%>
+<%--                            <a href="#">关于2020年清明节放假及学校值班安排的通知</a>--%>
+<%--                        </h2>--%>
+<%--                        <div class="cont">--%>
+<%--                            <div class="words">--%>
+<%--                                <div class="detail">--%>
+<%--                                    校属各单位：根据《河南省教育厅办公室关于2020年清明节放假安排的通知》（教办函〔2020〕86号）精神，为便于全校师生及早合理安排工作、学习，现将我校2020年清明节放假及学校值班安排通知如下：一、放假安排及相关要求（一）放假时间4月4日至6日放假调休，共3天。（二）相关...--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <button type="button" class="btn btn-default btn-xs"--%>
+<%--                                    style="background-color: #30a89d;color: white" onclick="updateNotice(1)">修改--%>
+<%--                            </button>--%>
+<%--                            <button type="button" class="btn btn-default btn-xs"--%>
+<%--                                    style="background-color: #ff5722;color: white;margin-left: 10px"--%>
+<%--                                    onclick="deleteNotice(1);">删除--%>
+<%--                            </button>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+
+<%--                </div>--%>
             </div>
             <!-- 新闻列表 END -->
         </div>
@@ -296,10 +331,10 @@
     </div>
     <!-- 分页 END -->
 </div>
+<c:if test="${empty isAdmin}">
+    <%@ include file="footer.html" %>
+</c:if>
 
-
-<%--<jsp:include page="footer.jsp"/>--%>
-<%@ include file="footer.html" %>
 <!--置顶开始-->
 <div class="fix-nav" id="fix-nav" style="display: block;">
     <div class="fix-nav-wrap"><img class="i-totop" src="${pageContext.request.contextPath}/images/to_top.png"/>

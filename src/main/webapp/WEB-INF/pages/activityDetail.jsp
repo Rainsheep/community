@@ -39,7 +39,9 @@
     </script>
 </head>
 <body>
-<%@ include file="header.html" %>
+<c:if test="${empty onlyContent}">
+    <%@ include file="header.html" %>
+</c:if>
 <div class="wrap" style="margin-top: 50px">
     <%-- 左侧导航   --%>
     <div class="wrap_right">
@@ -181,7 +183,9 @@
         $("#p_updateTime").html("${activity.formatUpdateTime}");
     </script>
 </div>
-<%@ include file="footer.html" %>
+<c:if test="${empty onlyContent}">
+    <%@ include file="footer.html" %>
+</c:if>
 <!--置顶开始-->
 <div class="fix-nav" id="fix-nav" style="display: block;">
     <div class="fix-nav-wrap"><img class="i-totop" src="${pageContext.request.contextPath}/images/to_top.png"/>

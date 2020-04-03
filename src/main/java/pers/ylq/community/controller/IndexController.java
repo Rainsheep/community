@@ -1,6 +1,7 @@
 package pers.ylq.community.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,10 +16,13 @@ public class IndexController {
     public String allActivityList(){
         return "allActivityList";
     }
+
     @RequestMapping("/allNoticeList")
-    public String allNoticeList(){
+    public String allNoticeList(Integer isAdmin, Model model){
+        model.addAttribute("isAdmin",isAdmin);
         return "allNoticeList";
     }
+
     @RequestMapping("/allCommunityList")
     public String allCommunityList(){
         return "allCommunityList";
@@ -47,6 +51,11 @@ public class IndexController {
             return "support/index";
         }
         return "index";
+    }
+
+    @RequestMapping("/homepage")
+    public String homepage(){
+        return "admin/homepage";
     }
 
 }
