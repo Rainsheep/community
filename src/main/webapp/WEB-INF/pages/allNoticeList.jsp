@@ -172,7 +172,7 @@
                     notice_list += pageInfo.list[i].simpleContent;
                     notice_list += '</div></div>';
                     <c:if test="${not empty isAdmin}">
-                    notice_list += '<button type="button" class="btn btn-default btn-xs" style="background-color: #30a89d;color: white" onclick="updateNotice(' + pageInfo.list[i].id + ')">修改</button>';
+                    notice_list += '<a type="button" class="btn btn-default btn-xs" style="background-color: #30a89d;color: white" href="${pageContext.request.contextPath}/notice/changeNotice?noticeId=' + pageInfo.list[i].id + '">修改</a>';
                     notice_list += '<button type="button" class="btn btn-default btn-xs" style="background-color: #ff5722;color: white;margin-left: 10px" onclick="deleteNotice(' + pageInfo.list[i].id + ');">删除</button>';
                     </c:if>
                     notice_list += '</div></div></div>';
@@ -289,32 +289,32 @@
             <!-- 新闻列表 -->
             <div class="news-list">
                 <!-- 重复内容 -->
-<%--                <div class="news-item">--%>
-<%--                    <div class="date">--%>
-<%--                        <div class="day">28</div>--%>
-<%--                        <div class="month">2020-03</div>--%>
-<%--                    </div>--%>
-<%--                    <div class="description">--%>
-<%--                        <h2>【通知】--%>
-<%--                            <a href="#">关于2020年清明节放假及学校值班安排的通知</a>--%>
-<%--                        </h2>--%>
-<%--                        <div class="cont">--%>
-<%--                            <div class="words">--%>
-<%--                                <div class="detail">--%>
-<%--                                    校属各单位：根据《河南省教育厅办公室关于2020年清明节放假安排的通知》（教办函〔2020〕86号）精神，为便于全校师生及早合理安排工作、学习，现将我校2020年清明节放假及学校值班安排通知如下：一、放假安排及相关要求（一）放假时间4月4日至6日放假调休，共3天。（二）相关...--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                            <button type="button" class="btn btn-default btn-xs"--%>
-<%--                                    style="background-color: #30a89d;color: white" onclick="updateNotice(1)">修改--%>
-<%--                            </button>--%>
-<%--                            <button type="button" class="btn btn-default btn-xs"--%>
-<%--                                    style="background-color: #ff5722;color: white;margin-left: 10px"--%>
-<%--                                    onclick="deleteNotice(1);">删除--%>
-<%--                            </button>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
+                <%--                <div class="news-item">--%>
+                <%--                    <div class="date">--%>
+                <%--                        <div class="day">28</div>--%>
+                <%--                        <div class="month">2020-03</div>--%>
+                <%--                    </div>--%>
+                <%--                    <div class="description">--%>
+                <%--                        <h2>【通知】--%>
+                <%--                            <a href="#">关于2020年清明节放假及学校值班安排的通知</a>--%>
+                <%--                        </h2>--%>
+                <%--                        <div class="cont">--%>
+                <%--                            <div class="words">--%>
+                <%--                                <div class="detail">--%>
+                <%--                                    校属各单位：根据《河南省教育厅办公室关于2020年清明节放假安排的通知》（教办函〔2020〕86号）精神，为便于全校师生及早合理安排工作、学习，现将我校2020年清明节放假及学校值班安排通知如下：一、放假安排及相关要求（一）放假时间4月4日至6日放假调休，共3天。（二）相关...--%>
+                <%--                                </div>--%>
+                <%--                            </div>--%>
+                <%--                            <button type="button" class="btn btn-default btn-xs"--%>
+                <%--                                    style="background-color: #30a89d;color: white" onclick="updateNotice(1)">修改--%>
+                <%--                            </button>--%>
+                <%--                            <button type="button" class="btn btn-default btn-xs"--%>
+                <%--                                    style="background-color: #ff5722;color: white;margin-left: 10px"--%>
+                <%--                                    onclick="deleteNotice(1);">删除--%>
+                <%--                            </button>--%>
+                <%--                        </div>--%>
+                <%--                    </div>--%>
 
-<%--                </div>--%>
+                <%--                </div>--%>
             </div>
             <!-- 新闻列表 END -->
         </div>

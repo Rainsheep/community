@@ -14,4 +14,6 @@ public interface NoticeService {
     ResultVo deleteNoticeById(Integer noticeId);
 
     Integer insertNotice(NoticeDTO noticeDTO,Integer aid);
+
+    void updateNotice(NoticeDTO noticeDTO, Integer aid);
 }

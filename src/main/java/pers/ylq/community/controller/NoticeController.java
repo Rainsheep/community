@@ -78,5 +78,34 @@ public class NoticeController {
         return null;
     }
 
+    @RequestMapping("/updateNotice")
+    @ResponseBody
+    public ResultVo updateNotice(HttpServletRequest request, NoticeDTO noticeDTO) {
+        Admin user = (Admin) request.getSession().getAttribute("user");
+        Integer aid = user.getAid();
+        noticeService.updateNotice(noticeDTO, aid);
+
+        Map<String, String> files = noticeDTO.getFiles();
+        if (files != null && files.size() > 0) {
+            for (String file : files.keySet()) {
+                noticeFileService.insertNoticeFile(noticeDTO.getId(), file, files.get(file));
+            }
+        }
+        return null;
+    }
+
+    /**
+     * 返回修改公告界面
+     */
+    @RequestMapping("/changeNotice")
+    public String changeNotice(Integer noticeId, Model model) {
+        Notice notice = noticeService.findNoticeById(noticeId);
+        //System.out.println(notice);
+        model.addAttribute("notice", notice);
+        return "admin/updateNotice";
+    }
+
+
+
 
 }

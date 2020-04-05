@@ -35,4 +35,7 @@ public interface NoticeMapper {
     @Insert("insert into tb_notice(title,content,aid) values(#{title},#{content},#{aid})")
     @Options(useGeneratedKeys = true, keyProperty = "id")
     void insertNotice(Notice notice);
+
+    @Update("update tb_notice set title=#{title},content=#{content},aid=#{aid} where id=#{id}")
+    void updateNotice(Notice notice);
 }

@@ -16,4 +16,9 @@ public class NoticeFileServiceImpl implements NoticeFileService {
     public void insertNoticeFile(Integer nid, String filename, String url) {
         noticeFileMapper.insertNoticeFile(nid, filename, url);
     }
+
+    @Override
+    public void delNoticeFileById(Integer id) {
+        noticeFileMapper.delNoticeFileById(id);
+    }
 }

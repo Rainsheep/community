@@ -13,6 +13,7 @@ import pers.ylq.community.mapper.NoticeMapper;
 import pers.ylq.community.service.NoticeService;
 
 import java.util.List;
+import java.util.Map;
 
 @Service("noticeService")
 public class NoticeServiceImpl implements NoticeService {
@@ -57,5 +58,15 @@ public class NoticeServiceImpl implements NoticeService {
 
         noticeMapper.insertNotice(notice);
         return notice.getId();
+    }
+
+    @Override
+    public void updateNotice(NoticeDTO noticeDTO, Integer aid){
+        Notice notice = new Notice();
+        notice.setId(noticeDTO.getId());
+        notice.setTitle(noticeDTO.getTitle());
+        notice.setContent(noticeDTO.getContent());
+        notice.setAid(aid);
+        noticeMapper.updateNotice(notice);
     }
 }
