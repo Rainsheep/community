@@ -104,7 +104,7 @@
                         </a>
                         <dl class="layui-nav-child">
                             <dd><a lay-href="${pageContext.request.contextPath}/allNoticeList?isAdmin=1">公告列表</a></dd>
-                            <dd><a lay-href="template/addresslist.html">发布公告</a></dd>
+                            <dd><a lay-href="${pageContext.request.contextPath}/addNotice">发布公告</a></dd>
                         </dl>
                     </li>
 
@@ -194,7 +194,8 @@
             </div>
             <div class="layui-tab" lay-unauto lay-allowClose="true" lay-filter="layadmin-layout-tabs">
                 <ul class="layui-tab-title" id="LAY_app_tabsheader">
-                    <li lay-id="${pageContext.request.contextPath}/homepage" lay-attr="${pageContext.request.contextPath}/homepage" class="layui-this"><i
+                    <li lay-id="${pageContext.request.contextPath}/homepage"
+                        lay-attr="${pageContext.request.contextPath}/homepage" class="layui-this"><i
                             class="layui-icon layui-icon-home"></i></li>
                 </ul>
             </div>
@@ -204,7 +205,8 @@
         <!-- 主体内容 -->
         <div class="layui-body" id="LAY_app_body">
             <div class="layadmin-tabsbody-item layui-show">
-                <iframe src="${pageContext.request.contextPath}/homepage" frameborder="0" class="layadmin-iframe"></iframe>
+                <iframe src="${pageContext.request.contextPath}/homepage" frameborder="0"
+                        class="layadmin-iframe"></iframe>
             </div>
         </div>
 

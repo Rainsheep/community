@@ -8,5 +8,6 @@ import java.io.Serializable;
 public class NoticeFile implements Serializable {
     private Integer id;
     private Integer nid;
+    private String filename;
     private String url;
 }

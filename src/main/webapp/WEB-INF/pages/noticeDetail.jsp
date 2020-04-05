@@ -147,6 +147,11 @@
             <div class="attr tc"> ( 发布者:${notice.aname} &nbsp;&nbsp;&nbsp;&nbsp;发布日期:${notice.formatDate} )</div>
             <div class="detail-content-body">
                 ${notice.content}
+
+                <br>
+                <c:forEach items="${notice.noticeFiles}" var="file" varStatus="s">
+                    附件${s.index+1}:  <a href="${pageContext.request.contextPath}/file/download?filename=${file.filename}&url=${file.url}" style="color: blue">${file.filename}</a><br>
+                </c:forEach>
             </div>
         </div>
     </div>

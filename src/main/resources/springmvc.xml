@@ -22,13 +22,20 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!-- 配置文件解析器   -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxInMemorySize" value="104857600"/>
+    </bean>
+
+
     <!-- 设置静态资源不过滤 -->
     <mvc:resources mapping="/css/**" location="/css/"/>
     <mvc:resources mapping="/images/**" location="/images/"/>
     <mvc:resources mapping="/js/**" location="/js/"/>
     <mvc:resources mapping="/fonts/**" location="/fonts/"/>
     <mvc:resources mapping="/layuiadmin/**" location="/layuiadmin/"/>
-
+    <mvc:resources mapping="/wangEditor/**" location="/wangEditor/"/>
+    <mvc:resources mapping="/upload/**" location="/upload/"/>
 
     <!-- 开启对SpringMVC注解的支持 -->
     <mvc:annotation-driven/>
