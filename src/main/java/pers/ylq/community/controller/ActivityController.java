@@ -1,6 +1,7 @@
 package pers.ylq.community.controller;
 
 import com.github.pagehelper.PageInfo;
+import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,9 +9,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pers.ylq.community.dto.ConditionSearch;
+import pers.ylq.community.dto.ResultVo;
 import pers.ylq.community.entity.Activity;
+import pers.ylq.community.entity.Admin;
 import pers.ylq.community.service.ActivityService;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -31,7 +35,8 @@ public class ActivityController {
     //    return "allActivityList";
     //}
     @RequestMapping("/findAll")
-    public @ResponseBody PageInfo findAll(ConditionSearch condition) {
+    public @ResponseBody
+    PageInfo findAll(ConditionSearch condition) {
         //System.out.println(condition);
         //System.out.println(currentPage+" "+pageSize);
         //System.out.println(condition.getPageSize());
@@ -40,16 +45,55 @@ public class ActivityController {
         return activityPageInfo;
     }
 
+    @RequestMapping("/findAll2")
+    @ResponseBody
+    public ResultVo<List<Activity>> findAll2(ConditionSearch condition) {
+        PageInfo pageInfo = activityService.findAll(condition);
+        ResultVo<List<Activity>> resultVo = new ResultVo<>(0, 0, "", pageInfo.getList());
+        resultVo.setCount((int) pageInfo.getTotal());
+        return resultVo;
+    }
+
     /**
      * 查看活动详情
      */
     @RequestMapping("/activityDetail")
-    public String activityDetail(Integer activityId,Integer onlyContent, Model model) {
+    public String activityDetail(Integer activityId, Integer onlyContent, Model model) {
         Activity activity = activityService.findActivityById(activityId);
         //System.out.println(activity.getDetail());
         //System.out.println(activity.getImages().size());
         model.addAttribute("activity", activity);
-        model.addAttribute("onlyContent",onlyContent);
+        model.addAttribute("onlyContent", onlyContent);
         return "activityDetail";
+    }
+
+    @RequestMapping("delActivityById")
+    @ResponseBody
+    public ResultVo delActivityById(Integer activityId) {
+        ResultVo resultVo = activityService.delActivityById(activityId);
+        return resultVo;
+    }
+
+    @RequestMapping("/findNotAduitActivity")
+    @ResponseBody
+    public ResultVo findNotAduitActivity(ConditionSearch condition) {
+        ResultVo<List<Activity>> resultVo = activityService.findNotAduitActivity(condition);
+        return resultVo;
+    }
+
+    @RequestMapping("/passActivityById")
+    @ResponseBody
+    public ResultVo passActivityById(HttpServletRequest request, Integer activityId) {
+        Admin user = (Admin) request.getSession().getAttribute("user");
+        ResultVo resultVo = activityService.passActivityById(activityId, user.getAid());
+        return resultVo;
+    }
+
+    @RequestMapping("/rejectActivityById")
+    @ResponseBody
+    public ResultVo rejectActivityById(HttpServletRequest request, Integer activityId, String message) {
+        Admin user = (Admin) request.getSession().getAttribute("user");
+        ResultVo resultVo = activityService.rejectActivityById(activityId, message, user.getAid());
+        return resultVo;
     }
 }

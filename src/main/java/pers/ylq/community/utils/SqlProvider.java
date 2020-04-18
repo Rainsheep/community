@@ -16,7 +16,7 @@ public class SqlProvider {
 
     public String selectAllActivity(ConditionSearch condition) {
 
-        String sql = "select * from tb_activity where type = 1 ";
+        String sql = "select * from tb_activity where type = 1 and status!=-1 ";
 
         if (condition.getActivityName() != null && !condition.getActivityName().equals("")) {
             sql += " and name like '%" + condition.getActivityName() + "%'";
@@ -55,7 +55,9 @@ public class SqlProvider {
     public String selectAllCommunity(String keyword){
         String sql="SELECT * FROM tb_community ";
         if(keyword!=null && keyword.length()>0){
-            sql+="WHERE cname LIKE '%"+keyword+"%' OR mname LIKE '%"+keyword+"%' OR amount LIKE '%"+keyword+"%' OR hold_time LIKE binary '%"+keyword+"%' OR LEVEL LIKE '%"+keyword+"%' ";
+            sql+="WHERE (cname LIKE '%"+keyword+"%' OR mname LIKE '%"+keyword+"%' OR amount LIKE '%"+keyword+"%' OR hold_time LIKE binary '%"+keyword+"%' OR LEVEL LIKE '%"+keyword+"%') and status!=-1 ";
+        }else {
+            sql+=" where status!=-1 ";
         }
         sql+=" order by hold_time DESC";
         //System.out.println(sql);
@@ -65,8 +67,11 @@ public class SqlProvider {
     public String selectAllSponsor(String keyword){
         String sql="SELECT * FROM tb_sponsor ";
         if(keyword!=null && keyword.length()>0){
-            sql+="where real_name like '%"+keyword+"%' or belong like '%"+keyword+"%' or phone like '%"+keyword+"%' or address like '%"+keyword+"%' ";
+            sql+="where (real_name like '%"+keyword+"%' or belong like '%"+keyword+"%' or phone like '%"+keyword+"%' or address like '%"+keyword+"%') and status!=-1 ";
+        }else{
+            sql+=" where status!=-1 ";
         }
+        //System.out.println(sql);
         return sql;
     }
 }

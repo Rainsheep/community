@@ -111,17 +111,17 @@
                     <li data-name="component" class="layui-nav-item">
                         <a href="javascript:;" lay-tips="活动列表" lay-direction="2">
                             <i class="layui-icon layui-icon-component"></i>
-                            <cite>活动列表</cite>
+                            <cite>社团活动</cite>
                         </a>
                         <dl class="layui-nav-child">
                             <dd>
-                                <a lay-href="component/button/index.html">活动列表</a>
+                                <a lay-href="${pageContext.request.contextPath}/admin/activityList">活动列表</a>
                             </dd>
+<%--                            <dd>--%>
+<%--                                <a lay-href="component/button/inex.html">添加活动</a>--%>
+<%--                            </dd>--%>
                             <dd>
-                                <a lay-href="component/button/inex.html">添加活动</a>
-                            </dd>
-                            <dd>
-                                <a lay-href="component/button/index.html">审核活动</a>
+                                <a lay-href="${pageContext.request.contextPath}/admin/aduitActivity">审核活动</a>
                             </dd>
                         </dl>
                     </li>
@@ -133,7 +133,7 @@
                         </a>
                         <dl class="layui-nav-child">
                             <dd>
-                                <a lay-href="component/button/index.html">社团列表</a>
+                                <a lay-href="${pageContext.request.contextPath}/admin/communityList">社团列表</a>
                             </dd>
                             <dd>
                                 <a lay-href="component/button/index.html">添加社团</a>
@@ -149,7 +149,7 @@
                         </a>
                         <dl class="layui-nav-child">
                             <dd>
-                                <a lay-href="user/user/list.html">管理员列表</a>
+                                <a lay-href="${pageContext.request.contextPath}/admin/managerList">管理员列表</a>
                             </dd>
                             <dd>
                                 <a lay-href="user/administrators/list.html">添加管理员</a>
@@ -164,7 +164,7 @@
                         </a>
                         <dl class="layui-nav-child">
                             <dd>
-                                <a lay-href="user/user/list.html">赞助商列表</a>
+                                <a lay-href="${pageContext.request.contextPath}/admin/sponsorList">赞助商列表</a>
                             </dd>
                             <dd>
                                 <a lay-href="user/administrators/list.html">添加赞助商</a>

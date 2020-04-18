@@ -42,15 +42,41 @@ public class AdminController {
     }
 
     @RequestMapping("/password")
-    public String password(){
+    public String password() {
         return "admin/updatePassword";
     }
 
     @RequestMapping("/updatePassword")
-    public @ResponseBody ResultVo updatePassword(HttpServletRequest request,String oldPassword,String newPassword){
+    public @ResponseBody
+    ResultVo updatePassword(HttpServletRequest request, String oldPassword, String newPassword) {
         Admin user = (Admin) request.getSession().getAttribute("user");
         Integer aid = user.getAid();
         ResultVo result = adminService.updatePasswordById(oldPassword, newPassword, aid);
         return result;
+    }
+
+    @RequestMapping("/sponsorList")
+    public String sponsorList() {
+        return "admin/sponsorList";
+    }
+
+    @RequestMapping("/managerList")
+    public String managerList() {
+        return "admin/managerList";
+    }
+
+    @RequestMapping("/communityList")
+    public String communityList() {
+        return "admin/communityList";
+    }
+
+    @RequestMapping("/activityList")
+    public String activityList(){
+        return "admin/activityList";
+    }
+
+    @RequestMapping("/aduitActivity")
+    public String aduitActivity(){
+        return "admin/aduitActivity";
     }
 }

@@ -13,5 +13,13 @@ public class ResultVo<T> implements Serializable {
     private Integer code;
     private Integer status;
     private String msg;
+    private Integer count;
     private T data;
+
+    public ResultVo(Integer code, Integer status, String msg, T data) {
+        this.code = code;
+        this.status = status;
+        this.msg = msg;
+        this.data = data;
+    }
 }

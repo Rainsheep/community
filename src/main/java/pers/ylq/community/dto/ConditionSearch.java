@@ -11,6 +11,8 @@ import java.io.Serializable;
 public class ConditionSearch implements Serializable {
     private Integer currentPage = 1;
     private Integer pageSize = 8;
+    private Integer page;
+    private Integer limit;
     private String activityName;
     private String activityTime;
     private String activityPlace;

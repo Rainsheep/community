@@ -11,5 +11,7 @@ import java.io.Serializable;
 public class CommunityConditionSearch implements Serializable {
     private Integer currentPage = 1;
     private Integer pageSize = 8;
+    private Integer page;
+    private Integer limit;
     private String keyword; //关键字
 }

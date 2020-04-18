@@ -20,6 +20,11 @@ public class Sponsor implements Serializable {
 
     public String getFormatMoneySum(){
         DecimalFormat decimalFormat = new DecimalFormat("###,###.00");
-        return decimalFormat.format(moneySum);
+        if(moneySum!=null&&moneySum!=0){
+            return decimalFormat.format(moneySum);
+        }else{
+            return "0";
+        }
+
     }
 }
