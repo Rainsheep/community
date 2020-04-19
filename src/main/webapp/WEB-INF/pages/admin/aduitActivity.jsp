@@ -69,11 +69,12 @@
             , title: '社团活动列表'
             , cols: [[
                 {field: 'id', title: 'ID', fixed: 'left', width: 70, unresize: true, sort: true}
-                , {field: 'name', title: '活动名称', width: 250}
-                , {field: 'formatDate', title: '活动时间', width: 200, sort: true}
-                , {field: 'place', title: '活动地点', sort: true, width: 250}
-                , {field: 'cname', title: '所属社团', width: 130}
+                , {field: 'name', title: '活动名称', width: 200}
+                , {field: 'formatDate', title: '活动时间', width: 180, sort: true}
+                , {field: 'place', title: '活动地点', sort: true, width: 200}
+                , {field: 'cname', title: '所属社团', width: 110}
                 , {field: 'amount', title: '参与人数', width: 100, sort: true}
+                , {field: 'formatUpdateTime', title: '申请时间', width: 200, sort: true}
                 , {fixed: 'right', title: '操作', toolbar: '#test-table-toolbar-barDemo'}
             ]]
             , page: true

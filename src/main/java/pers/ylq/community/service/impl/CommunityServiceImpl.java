@@ -100,4 +100,27 @@ public class CommunityServiceImpl implements CommunityService {
         List<Community> communities = communityMapper.findAll(null);
         return communities;
     }
+
+    @Override
+    public Community findCommunityById(Integer cid) {
+        Community community = communityMapper.findCommunityById(cid);
+        return community;
+    }
+
+    @Override
+    public ResultVo updateMnameAndAmount(Integer cid, String mname, Integer amount) {
+        ResultVo resultVo = null;
+        Integer flag = 0;
+        try {
+            flag=communityMapper.updateMnameAndAmount(cid, mname, amount);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (flag <= 0) {
+            resultVo = new ResultVo<>(0, -1, "修改失败!", null);
+        } else {
+            resultVo = new ResultVo<>(0, 0, "修改成功!", null);
+        }
+        return resultVo;
+    }
 }

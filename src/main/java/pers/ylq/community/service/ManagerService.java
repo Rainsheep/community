@@ -17,4 +17,8 @@ public interface ManagerService {
     ResultVo updateFieldByMidAndValue(Integer mid, String field, String value);
 
     ResultVo addManager(Manager manager);
+
+    ResultVo updatePasswordById(String oldPassword,String newPassword,Integer mid);
+
+    ResultVo updateRealNameById(String realName, Integer mid);
 }

@@ -62,4 +62,10 @@ public class CommunityController {
         ResultVo resultVo = communityService.addCommunity(community);
         return resultVo;
     }
+
+    @RequestMapping("/updateMnameAndAmount")
+    @ResponseBody
+    public ResultVo updateMnameAndAmount(Integer cid,String mname,Integer amount){
+        return communityService.updateMnameAndAmount(cid, mname, amount);
+    }
 }

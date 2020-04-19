@@ -6,9 +6,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pers.ylq.community.dto.ResultVo;
+import pers.ylq.community.entity.Admin;
 import pers.ylq.community.entity.Manager;
 import pers.ylq.community.service.ManagerService;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -39,5 +41,30 @@ public class ManagerController {
     public ResultVo updateFieldByMidAndValue(Integer mid, String field, String value) {
         ResultVo resultVo = managerService.updateFieldByMidAndValue(mid, field, value);
         return resultVo;
+    }
+
+    @RequestMapping("/addManager")
+    @ResponseBody
+    public ResultVo addManager(Manager manager) {
+        ResultVo resultVo = managerService.addManager(manager);
+        return resultVo;
+    }
+
+    @RequestMapping("/updatePassword")
+    public @ResponseBody
+    ResultVo updatePassword(HttpServletRequest request, String oldPassword, String newPassword) {
+        Manager user = (Manager) request.getSession().getAttribute("user");
+        Integer mid = user.getMid();
+        ResultVo result = managerService.updatePasswordById(oldPassword, newPassword, mid);
+        return result;
+    }
+
+    @RequestMapping("/updateRealName")
+    public @ResponseBody
+    ResultVo updateRealName(HttpServletRequest request, String realName) {
+        Manager user = (Manager) request.getSession().getAttribute("user");
+        Integer mid = user.getMid();
+        ResultVo result = managerService.updateRealNameById(realName, mid);
+        return result;
     }
 }

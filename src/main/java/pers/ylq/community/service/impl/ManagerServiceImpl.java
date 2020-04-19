@@ -47,7 +47,7 @@ public class ManagerServiceImpl implements ManagerService {
     @Override
     public ResultVo delManagerById(Integer mid) {
         ResultVo resultVo = null;
-        Integer flag=0;
+        Integer flag = 0;
         try {
             flag = managerMapper.delManagerById(mid);
         } catch (Exception e) {
@@ -90,7 +90,7 @@ public class ManagerServiceImpl implements ManagerService {
         Integer flag = 0;
 
         Manager manager1 = managerMapper.findManagerByMname(manager.getMname());
-        if(manager1!=null){
+        if (manager1 != null) {
             return new ResultVo<>(0, -1, "用户名已存在", null);
         }
         try {
@@ -103,6 +103,34 @@ public class ManagerServiceImpl implements ManagerService {
             resultVo = new ResultVo<>(0, 0, "添加成功!", null);
         }
         return resultVo;
+    }
+
+    @Override
+    public ResultVo updatePasswordById(String oldPassword, String newPassword, Integer mid) {
+        ResultVo result = null;
+        if (!oldPassword.equals(managerMapper.findPasswordById(mid))) {
+            result = new ResultVo<>(0, 1, "当前密码错误!", null);
+        } else {
+            Integer flag = managerMapper.updatePasswordById(newPassword, mid);
+            if (flag <= 0) {
+                result = new ResultVo<>(0, 1, "修改失败!", null);
+            } else {
+                result = new ResultVo<>(0, 0, "修改成功!", null);
+            }
+        }
+        return result;
+    }
+
+    @Override
+    public ResultVo updateRealNameById(String realName, Integer mid) {
+        Integer flag = managerMapper.updateRealNameById(realName, mid);
+        ResultVo result = null;
+        if (flag <= 0) {
+            result = new ResultVo<>(0, 1, "修改失败!", null);
+        } else {
+            result = new ResultVo<>(0, 0, "修改成功!", null);
+        }
+        return result;
     }
 }
 

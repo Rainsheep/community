@@ -1,6 +1,7 @@
 package pers.ylq.community.service;
 
 import com.github.pagehelper.PageInfo;
+import pers.ylq.community.dto.ActivityDTO;
 import pers.ylq.community.dto.ConditionSearch;
 import pers.ylq.community.dto.ResultVo;
 import pers.ylq.community.entity.Activity;
@@ -16,7 +17,9 @@ public interface ActivityService {
 
     ResultVo<List<Activity>> findNotAduitActivity(ConditionSearch condition);
 
-    ResultVo passActivityById(Integer activityId,Integer aid);
+    ResultVo passActivityById(Integer activityId, Integer aid);
 
-    ResultVo rejectActivityById(Integer activityId,String message,Integer aid);
+    ResultVo rejectActivityById(Integer activityId, String message, Integer aid);
+
+    ResultVo addActivity(ActivityDTO activityDTO);
 }

@@ -14,4 +14,6 @@ public interface CommunityService {
     ResultVo updateFieldByCidAndValue(Integer cid, String field, String value);
     ResultVo addCommunity(Community community);
     List<Community> findAllAsList();
+    Community findCommunityById(Integer cid);
+    ResultVo updateMnameAndAmount(Integer cid,String mname,Integer amount);
 }

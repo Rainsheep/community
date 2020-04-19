@@ -59,4 +59,8 @@ public interface ActivityMapper {
     @Update("update tb_activity set type=3,aid=#{arg2},update_time=NULL,dismiss_message=#{arg1} where id=#{arg0}")
     Integer rejectActivityById(Integer activityId,String message,Integer aid);
 
+    @Insert("insert into tb_activity(name,datetime,place,belong,amount,detail,sponsor_money,mid,type) values(#{name},#{datetime},#{place},#{belong},#{amount},#{detail},#{sponsorMoney},#{mid},#{type})")
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    Integer addActivity(Activity activity);
+
 }

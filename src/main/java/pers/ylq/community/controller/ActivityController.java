@@ -8,14 +8,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import pers.ylq.community.dto.ActivityDTO;
 import pers.ylq.community.dto.ConditionSearch;
 import pers.ylq.community.dto.ResultVo;
 import pers.ylq.community.entity.Activity;
+import pers.ylq.community.entity.ActivityImg;
 import pers.ylq.community.entity.Admin;
+import pers.ylq.community.service.ActivityImgServer;
 import pers.ylq.community.service.ActivityService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/activity")
@@ -23,6 +27,9 @@ public class ActivityController {
 
     @Autowired
     private ActivityService activityService;
+
+    @Autowired
+    private ActivityImgServer activityImgServer;
 
     /**
      * 分页查询所有已审核活动
@@ -94,6 +101,25 @@ public class ActivityController {
     public ResultVo rejectActivityById(HttpServletRequest request, Integer activityId, String message) {
         Admin user = (Admin) request.getSession().getAttribute("user");
         ResultVo resultVo = activityService.rejectActivityById(activityId, message, user.getAid());
+        return resultVo;
+    }
+
+    @RequestMapping("/addActivity")
+    @ResponseBody
+    public ResultVo addActivity(ActivityDTO activityDTO) {
+        ResultVo resultVo = activityService.addActivity(activityDTO);
+        if (resultVo.getStatus() == -1) return resultVo;
+
+        Integer activityId = (Integer) resultVo.getData();
+
+        Map<String,String> map=activityDTO.getImgs();
+        if(map==null)return resultVo;
+        for (String s : map.keySet()) {
+            ActivityImg activityImg = new ActivityImg();
+            activityImg.setActivityId(activityId);
+            activityImg.setUrl(map.get(s));
+            activityImgServer.addActivityImg(activityImg);
+        }
         return resultVo;
     }
 }

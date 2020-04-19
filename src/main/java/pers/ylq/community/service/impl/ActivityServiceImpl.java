@@ -4,6 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pers.ylq.community.dto.ActivityDTO;
 import pers.ylq.community.dto.ConditionSearch;
 import pers.ylq.community.dto.ResultVo;
 import pers.ylq.community.entity.Activity;
@@ -103,6 +104,36 @@ public class ActivityServiceImpl implements ActivityService {
         } else {
             resultVo = new ResultVo<>(0, 0, "驳回成功!", null);
         }
+        return resultVo;
+    }
+
+    @Override
+    public ResultVo addActivity(ActivityDTO activityDTO) {
+        //System.out.println(activityDTO);
+        Activity activity = new Activity();
+        activity.setName(activityDTO.getName());
+        activity.setDatetime(activityDTO.getDatetime());
+        activity.setPlace(activityDTO.getPlace());
+        activity.setBelong(activityDTO.getBelong());
+        activity.setAmount(activityDTO.getAmount());
+        activity.setDetail(activityDTO.getDetail());
+        activity.setSponsorMoney(activityDTO.getSponsorMoney());
+        activity.setMid(activityDTO.getMid());
+        activity.setType(activityDTO.getType());
+
+        ResultVo resultVo = null;
+        Integer flag = 0;
+        try {
+            flag = activityMapper.addActivity(activity);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (flag <= 0) {
+            resultVo = new ResultVo<>(0, -1, "添加失败!", null);
+        } else {
+            resultVo = new ResultVo<>(0, 0, "添加成功!", activity.getId());
+        }
+
         return resultVo;
     }
 

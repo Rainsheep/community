@@ -11,8 +11,6 @@ public interface ManagerMapper {
     @Select("select real_name from tb_manager where mid=#{mid}")
     String findRealNameById(Integer mid);
 
-    @Select("select * from tb_manager where mname=#{arg0} and password=#{arg1} and status!=-1")
-    Manager findManagerByMnameAndPassword(String mname, String password);
 
     @Results(id = "managerMap", value = {
             @Result(id = true, property = "mid", column = "mid"),
@@ -24,6 +22,10 @@ public interface ManagerMapper {
     })
     @Select("select * from tb_manager where status!=-1")
     List<Manager> findAll();
+
+    @ResultMap("managerMap")
+    @Select("select * from tb_manager where mname=#{arg0} and password=#{arg1} and status!=-1")
+    Manager findManagerByMnameAndPassword(String mname, String password);
 
     //@Delete("delete from tb_manager where mid = #{mid}")
     @Update("update tb_manager set status=-1 where mid=#{mid}")
@@ -37,4 +39,13 @@ public interface ManagerMapper {
 
     @Select("select * from tb_manager where mname=#{mname}")
     Manager findManagerByMname(String mname);
+
+    @Update("update tb_manager set password=#{arg0} where mid=#{arg1}")
+    Integer updatePasswordById(String newPassword,Integer mid);
+
+    @Select("select password from tb_manager where mid=#{mid}")
+    String findPasswordById(Integer mid);
+
+    @Update("update tb_manager set real_name=#{arg0} where mid=#{arg1}")
+    Integer updateRealNameById(String realName,Integer mid);
 }

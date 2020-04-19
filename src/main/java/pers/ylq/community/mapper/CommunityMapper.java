@@ -9,6 +9,19 @@ import java.util.List;
 
 @Repository
 public interface CommunityMapper {
+
+    @Results(id = "communityMap", value = {
+            @Result(id = true, property = "cid", column = "cid"),
+            @Result(property = "cname", column = "cname"),
+            @Result(property = "mname", column = "mname"),
+            @Result(property = "amount", column = "amount"),
+            @Result(property = "activityNums", column = "cid", one = @One(select = "pers.ylq.community.mapper.ActivityMapper.findCountByCid")),
+            @Result(property = "holdTime", column = "hold_time"),
+            @Result(property = "level", column = "level")
+    })
+    @Select("select * from tb_community where cid=#{cid}")
+    Community findCommunityById(Integer cid);
+
     @Select("select cname from tb_community where cid=#{cid}")
     String findNameById(Integer cid);
 
@@ -36,4 +49,9 @@ public interface CommunityMapper {
 
     @Select("select * from tb_community where cname=#{cname}")
     Community findCommunityByCname(String cname);
+
+    @Update("update tb_community set mname=#{arg1},amount=#{arg2} where cid=#{arg0}")
+    Integer updateMnameAndAmount(Integer cid,String mname,Integer amount);
+
+
 }
