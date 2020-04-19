@@ -48,7 +48,7 @@ public class CommunityServiceImpl implements CommunityService {
     @Override
     public ResultVo delCommunityByCid(Integer cid) {
         ResultVo resultVo = null;
-        Integer flag=0;
+        Integer flag = 0;
         try {
             flag = communityMapper.delCommunityByCid(cid);
         } catch (Exception e) {
@@ -72,5 +72,32 @@ public class CommunityServiceImpl implements CommunityService {
             result = new ResultVo<>(0, 0, "修改成功!", null);
         }
         return result;
+    }
+
+    @Override
+    public ResultVo addCommunity(Community community) {
+        ResultVo resultVo = null;
+        Integer flag = 0;
+
+        Community community1 = communityMapper.findCommunityByCname(community.getCname());
+        if(community1!=null)return new ResultVo<>(0, -1, "社团名已存在!", null);
+
+        try {
+            flag = communityMapper.addCommunity(community);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (flag <= 0) {
+            resultVo = new ResultVo<>(0, -1, "添加失败!", null);
+        } else {
+            resultVo = new ResultVo<>(0, 0, "添加成功!", null);
+        }
+        return resultVo;
+    }
+
+    @Override
+    public List<Community> findAllAsList() {
+        List<Community> communities = communityMapper.findAll(null);
+        return communities;
     }
 }

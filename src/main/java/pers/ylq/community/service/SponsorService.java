@@ -13,4 +13,5 @@ public interface SponsorService {
     Sponsor findSponsorBySnameAndPassword(LoginDTO loginDTO);
     ResultVo delSponsorById(Integer sid);
     ResultVo updateFieldBySidAndValue(Integer sid, String field, String value);
+    ResultVo addSponsor(Sponsor sponsor);
 }

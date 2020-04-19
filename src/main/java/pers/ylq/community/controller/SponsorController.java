@@ -3,6 +3,7 @@ package pers.ylq.community.controller;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pers.ylq.community.dto.ResultVo;
@@ -51,6 +52,14 @@ public class SponsorController {
     public ResultVo updateFieldBySidAndValue(Integer sid, String field, String value) {
         //System.out.println(sid + " " + field + " " + value);
         ResultVo resultVo = sponsorService.updateFieldBySidAndValue(sid, field, value);
+        return resultVo;
+    }
+
+    @RequestMapping("/addSponsor")
+    @ResponseBody
+    public ResultVo addSponsor(Sponsor sponsor) {
+        System.out.println(sponsor);
+        ResultVo resultVo = sponsorService.addSponsor(sponsor);
         return resultVo;
     }
 }

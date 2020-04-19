@@ -3,6 +3,7 @@ package pers.ylq.community.controller;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pers.ylq.community.dto.CommunityConditionSearch;
@@ -51,6 +52,14 @@ public class CommunityController {
     @ResponseBody
     public ResultVo updateFieldBycidAndValue(Integer cid, String field, String value) {
         ResultVo resultVo = communityService.updateFieldByCidAndValue(cid, field, value);
+        return resultVo;
+    }
+
+    @RequestMapping("/addCommunity")
+    @ResponseBody
+    public ResultVo addCommunity(Community community) {
+        //System.out.println(community);
+        ResultVo resultVo = communityService.addCommunity(community);
         return resultVo;
     }
 }

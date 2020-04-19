@@ -31,4 +31,10 @@ public interface ManagerMapper {
 
     @Update("update tb_manager set ${arg1}=#{arg2} where mid=#{arg0}")
     Integer updateFieldByMidAndValue(Integer mid, String field, String value);
+
+    @Insert("insert into tb_manager values(NULL,#{mname},#{password},#{realName},#{belong},0)")
+    Integer addManager(Manager manager);
+
+    @Select("select * from tb_manager where mname=#{mname}")
+    Manager findManagerByMname(String mname);
 }

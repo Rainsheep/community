@@ -47,9 +47,9 @@ public class SponsorServiceImpl implements SponsorService {
     @Override
     public ResultVo delSponsorById(Integer sid) {
         ResultVo resultVo = null;
-        Integer flag=0;
+        Integer flag = 0;
         try {
-            flag=sponsorMapper.delSponsorById(sid);
+            flag = sponsorMapper.delSponsorById(sid);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -71,5 +71,25 @@ public class SponsorServiceImpl implements SponsorService {
             result = new ResultVo<>(0, 0, "修改成功!", null);
         }
         return result;
+    }
+
+    @Override
+    public ResultVo addSponsor(Sponsor sponsor) {
+        ResultVo resultVo = null;
+        Integer flag = 0;
+
+        Sponsor sponsor1 = sponsorMapper.findSponsorBySname(sponsor.getSname());
+        if (sponsor1 != null) return new ResultVo<>(0, -1, "用户名已存在!", null);
+
+        try {
+            flag = sponsorMapper.addSponsor(sponsor);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (flag <= 0) resultVo = new ResultVo<>(0, -1, "添加失败!", null);
+        else {
+            resultVo = new ResultVo<>(0, 0, "添加成功!", null);
+        }
+        return resultVo;
     }
 }

@@ -3,6 +3,7 @@ package pers.ylq.community.entity;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -19,5 +20,10 @@ public class Community implements Serializable {
     public String getFormatDate(){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
         return sdf.format(holdTime);
+    }
+    public void setFormatDate(String formatDate) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = sdf.parse(formatDate);
+        this.holdTime=date;
     }
 }

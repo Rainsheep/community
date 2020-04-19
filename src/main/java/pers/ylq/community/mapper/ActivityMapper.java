@@ -58,4 +58,5 @@ public interface ActivityMapper {
 
     @Update("update tb_activity set type=3,aid=#{arg2},update_time=NULL,dismiss_message=#{arg1} where id=#{arg0}")
     Integer rejectActivityById(Integer activityId,String message,Integer aid);
+
 }

@@ -35,4 +35,12 @@ public interface SponsorMapper {
 
     @Update("update tb_sponsor set ${arg1}=#{arg2} where sid=#{arg0}")
     Integer updateFieldBySidAndValue(Integer sid, String field, String value);
+
+    @Insert("insert into tb_sponsor values(null,#{sname},#{password},#{realName},#{belong},#{phone},#{address},#{detail},0)")
+    Integer addSponsor(Sponsor sponsor);
+
+    @Select("select * from tb_sponsor where sname=#{sname}")
+    @ResultMap("sponsorMap")
+    Sponsor findSponsorBySname(String sname);
+
 }

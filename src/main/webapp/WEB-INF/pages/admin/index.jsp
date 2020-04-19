@@ -136,7 +136,7 @@
                                 <a lay-href="${pageContext.request.contextPath}/admin/communityList">社团列表</a>
                             </dd>
                             <dd>
-                                <a lay-href="component/button/index.html">添加社团</a>
+                                <a lay-href="${pageContext.request.contextPath}/admin/addCommunity">添加社团</a>
                             </dd>
                         </dl>
                     </li>
@@ -152,7 +152,7 @@
                                 <a lay-href="${pageContext.request.contextPath}/admin/managerList">管理员列表</a>
                             </dd>
                             <dd>
-                                <a lay-href="user/administrators/list.html">添加管理员</a>
+                                <a lay-href="${pageContext.request.contextPath}/admin/addManager">添加管理员</a>
                             </dd>
                         </dl>
                     </li>
@@ -167,7 +167,7 @@
                                 <a lay-href="${pageContext.request.contextPath}/admin/sponsorList">赞助商列表</a>
                             </dd>
                             <dd>
-                                <a lay-href="user/administrators/list.html">添加赞助商</a>
+                                <a lay-href="${pageContext.request.contextPath}/admin/addSponsor">添加赞助商</a>
                             </dd>
                         </dl>
                     </li>

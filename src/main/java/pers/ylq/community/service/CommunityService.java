@@ -12,4 +12,6 @@ public interface CommunityService {
     PageInfo findAll(CommunityConditionSearch condition);
     ResultVo delCommunityByCid(Integer cid);
     ResultVo updateFieldByCidAndValue(Integer cid, String field, String value);
+    ResultVo addCommunity(Community community);
+    List<Community> findAllAsList();
 }

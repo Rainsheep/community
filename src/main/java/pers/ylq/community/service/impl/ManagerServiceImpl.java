@@ -83,5 +83,26 @@ public class ManagerServiceImpl implements ManagerService {
         }
         return resultVo;
     }
+
+    @Override
+    public ResultVo addManager(Manager manager) {
+        ResultVo resultVo = null;
+        Integer flag = 0;
+
+        Manager manager1 = managerMapper.findManagerByMname(manager.getMname());
+        if(manager1!=null){
+            return new ResultVo<>(0, -1, "用户名已存在", null);
+        }
+        try {
+            flag = managerMapper.addManager(manager);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (flag <= 0) resultVo = new ResultVo<>(0, -1, "添加失败!", null);
+        else {
+            resultVo = new ResultVo<>(0, 0, "添加成功!", null);
+        }
+        return resultVo;
+    }
 }
 

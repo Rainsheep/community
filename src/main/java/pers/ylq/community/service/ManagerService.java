@@ -7,8 +7,14 @@ import pers.ylq.community.entity.Manager;
 
 public interface ManagerService {
     String findRealNameById(Integer mid);
+
     Manager findManagerByMnameAndPassword(LoginDTO loginDTO);
-    PageInfo findAll(Integer page,Integer limit);
+
+    PageInfo findAll(Integer page, Integer limit);
+
     ResultVo delManagerById(Integer mid);
+
     ResultVo updateFieldByMidAndValue(Integer mid, String field, String value);
+
+    ResultVo addManager(Manager manager);
 }

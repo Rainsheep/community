@@ -1,9 +1,6 @@
 package pers.ylq.community.mapper;
 
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.SelectProvider;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 import pers.ylq.community.entity.Community;
 import pers.ylq.community.utils.SqlProvider;
@@ -21,7 +18,7 @@ public interface CommunityMapper {
     @Select("select cid from tb_community where cname=#{cname}")
     Integer findIdByName2(String cname);
 
-    @SelectProvider(type = SqlProvider.class,method = "selectAllCommunity")
+    @SelectProvider(type = SqlProvider.class, method = "selectAllCommunity")
     List<Community> findAll(String keyword);
 
     @Select("SELECT cname FROM tb_community WHERE cid=(SELECT belong FROM tb_manager WHERE MID=#{mid})")
@@ -33,4 +30,10 @@ public interface CommunityMapper {
 
     @Update("update tb_community set ${arg1}=#{arg2} where cid=#{arg0}")
     Integer updateFieldByCidAndValue(Integer cid, String field, String value);
+
+    @Insert("insert tb_community VALUES(NULL,#{cname},#{mname},#{amount},0,#{holdTime,jdbcType=DATE},#{level},0)")
+    Integer addCommunity(Community community);
+
+    @Select("select * from tb_community where cname=#{cname}")
+    Community findCommunityByCname(String cname);
 }
