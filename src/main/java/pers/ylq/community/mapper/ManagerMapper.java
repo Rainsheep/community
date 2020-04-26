@@ -48,4 +48,5 @@ public interface ManagerMapper {
 
     @Update("update tb_manager set real_name=#{arg0} where mid=#{arg1}")
     Integer updateRealNameById(String realName,Integer mid);
+
 }

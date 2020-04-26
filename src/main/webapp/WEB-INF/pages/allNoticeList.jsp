@@ -154,12 +154,12 @@
                 var notice_list = "";
                 for (var i = 0; i < pageInfo.list.length; i++) {
                     notice_list += '<div class="news-item">';
-                    notice_list += '<div class="date">';
-                    notice_list += '<div class="day">' + pageInfo.list[i].formatDay + '</div>';
-                    notice_list += '<div class="month">' + pageInfo.list[i].formatMonth + '</div>';
-                    notice_list += '</div>';
+                    // notice_list += '<div class="date">';
+                    // notice_list += '<div class="day">' + pageInfo.list[i].formatDay + '</div>';
+                    // notice_list += '<div class="month">' + pageInfo.list[i].formatMonth + '</div>';
+                    // notice_list += '</div>';
                     notice_list += '<div class="description">';
-                    notice_list += '<h2>【通知】';
+                    notice_list += '<h2>【' + pageInfo.list[i].formatMonth + '-' + pageInfo.list[i].formatDay + '】';
                     <c:if test="${empty isAdmin}">
                     notice_list += '<a href="${pageContext.request.contextPath}/notice/noticeDetail?noticeId=' + pageInfo.list[i].id + '">' + pageInfo.list[i].title + '</a>';
                     </c:if>
@@ -264,13 +264,17 @@
 </head>
 
 <body>
+
+
 <c:if test="${empty isAdmin}">
-    <%@ include file="header.html" %>
+    <div style="height: 50px">
+        <%@ include file="header.html" %>
+    </div>
 </c:if>
 
 
 <!--内容开始 -->
-<div class="wrap" style="margin-top: 50px">
+<div class="wrap">
     <%-- 头部 --%>
     <div class="wrap_left1">
         <div class="ltop">

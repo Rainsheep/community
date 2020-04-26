@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <meta charset="utf-8">
@@ -97,80 +98,90 @@
                         </dl>
                     </li>
 
-                    <li data-name="template" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="通知公告" lay-direction="2">
-                            <i class="layui-icon layui-icon-template"></i>
-                            <cite>通知公告</cite>
-                        </a>
-                        <dl class="layui-nav-child">
-                            <dd><a lay-href="${pageContext.request.contextPath}/allNoticeList?isAdmin=1">公告列表</a></dd>
-                            <dd><a lay-href="${pageContext.request.contextPath}/addNotice">发布公告</a></dd>
-                        </dl>
-                    </li>
-
-                    <li data-name="component" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="活动列表" lay-direction="2">
-                            <i class="layui-icon layui-icon-component"></i>
-                            <cite>社团活动</cite>
-                        </a>
-                        <dl class="layui-nav-child">
-                            <dd>
-                                <a lay-href="${pageContext.request.contextPath}/admin/activityList">活动列表</a>
-                            </dd>
-<%--                            <dd>--%>
-<%--                                <a lay-href="component/button/inex.html">添加活动</a>--%>
-<%--                            </dd>--%>
-                            <dd>
-                                <a lay-href="${pageContext.request.contextPath}/admin/aduitActivity">审核活动</a>
-                            </dd>
-                        </dl>
-                    </li>
-
-                    <li data-name="senior" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="学生社团" lay-direction="2">
-                            <i class="layui-icon layui-icon-senior"></i>
-                            <cite>学生社团</cite>
-                        </a>
-                        <dl class="layui-nav-child">
-                            <dd>
-                                <a lay-href="${pageContext.request.contextPath}/admin/communityList">社团列表</a>
-                            </dd>
-                            <dd>
-                                <a lay-href="${pageContext.request.contextPath}/admin/addCommunity">添加社团</a>
-                            </dd>
-                        </dl>
-                    </li>
+                    <c:if test="${user.type eq 0 or user.type eq 1}">
+                        <li data-name="template" class="layui-nav-item">
+                            <a href="javascript:;" lay-tips="通知公告" lay-direction="2">
+                                <i class="layui-icon layui-icon-template"></i>
+                                <cite>通知公告</cite>
+                            </a>
+                            <dl class="layui-nav-child">
+                                <dd><a lay-href="${pageContext.request.contextPath}/allNoticeList?isAdmin=1">公告列表</a>
+                                </dd>
+                                <dd><a lay-href="${pageContext.request.contextPath}/addNotice">发布公告</a></dd>
+                            </dl>
+                        </li>
+                    </c:if>
 
 
-                    <li data-name="user" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="社团管理员" lay-direction="2">
-                            <i class="layui-icon layui-icon-user"></i>
-                            <cite>社团管理员</cite>
-                        </a>
-                        <dl class="layui-nav-child">
-                            <dd>
-                                <a lay-href="${pageContext.request.contextPath}/admin/managerList">管理员列表</a>
-                            </dd>
-                            <dd>
-                                <a lay-href="${pageContext.request.contextPath}/admin/addManager">添加管理员</a>
-                            </dd>
-                        </dl>
-                    </li>
+                    <c:if test="${user.type eq 0 or user.type eq 2}">
+                        <li data-name="component" class="layui-nav-item">
+                            <a href="javascript:;" lay-tips="活动列表" lay-direction="2">
+                                <i class="layui-icon layui-icon-component"></i>
+                                <cite>社团活动</cite>
+                            </a>
+                            <dl class="layui-nav-child">
+                                <dd>
+                                    <a lay-href="${pageContext.request.contextPath}/admin/activityList">活动列表</a>
+                                </dd>
+                                    <%--                            <dd>--%>
+                                    <%--                                <a lay-href="component/button/inex.html">添加活动</a>--%>
+                                    <%--                            </dd>--%>
+                                <dd>
+                                    <a lay-href="${pageContext.request.contextPath}/admin/aduitActivity">审核活动</a>
+                                </dd>
+                            </dl>
+                        </li>
+                    </c:if>
 
-                    <li data-name="user" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="赞助商" lay-direction="2">
-                            <i class="layui-icon layui-icon-auz"></i>
-                            <cite>赞助商</cite>
-                        </a>
-                        <dl class="layui-nav-child">
-                            <dd>
-                                <a lay-href="${pageContext.request.contextPath}/admin/sponsorList">赞助商列表</a>
-                            </dd>
-                            <dd>
-                                <a lay-href="${pageContext.request.contextPath}/admin/addSponsor">添加赞助商</a>
-                            </dd>
-                        </dl>
-                    </li>
+                    <c:if test="${user.type eq 0 or user.type eq 3}">
+                        <li data-name="senior" class="layui-nav-item">
+                            <a href="javascript:;" lay-tips="学生社团" lay-direction="2">
+                                <i class="layui-icon layui-icon-senior"></i>
+                                <cite>学生社团</cite>
+                            </a>
+                            <dl class="layui-nav-child">
+                                <dd>
+                                    <a lay-href="${pageContext.request.contextPath}/admin/communityList">社团列表</a>
+                                </dd>
+                                <dd>
+                                    <a lay-href="${pageContext.request.contextPath}/admin/addCommunity">添加社团</a>
+                                </dd>
+                            </dl>
+                        </li>
+
+
+                        <li data-name="user" class="layui-nav-item">
+                            <a href="javascript:;" lay-tips="社团管理员" lay-direction="2">
+                                <i class="layui-icon layui-icon-user"></i>
+                                <cite>社团管理员</cite>
+                            </a>
+                            <dl class="layui-nav-child">
+                                <dd>
+                                    <a lay-href="${pageContext.request.contextPath}/admin/managerList">管理员列表</a>
+                                </dd>
+                                <dd>
+                                    <a lay-href="${pageContext.request.contextPath}/admin/addManager">添加管理员</a>
+                                </dd>
+                            </dl>
+                        </li>
+                    </c:if>
+
+                    <c:if test="${user.type eq 0 or user.type eq 4}">
+                        <li data-name="user" class="layui-nav-item">
+                            <a href="javascript:;" lay-tips="赞助商" lay-direction="2">
+                                <i class="layui-icon layui-icon-auz"></i>
+                                <cite>赞助商</cite>
+                            </a>
+                            <dl class="layui-nav-child">
+                                <dd>
+                                    <a lay-href="${pageContext.request.contextPath}/admin/sponsorList">赞助商列表</a>
+                                </dd>
+                                <dd>
+                                    <a lay-href="${pageContext.request.contextPath}/admin/addSponsor">添加赞助商</a>
+                                </dd>
+                            </dl>
+                        </li>
+                    </c:if>
 
                 </ul>
             </div>

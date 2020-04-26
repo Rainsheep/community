@@ -14,6 +14,7 @@ import pers.ylq.community.dto.ResultVo;
 import pers.ylq.community.entity.Activity;
 import pers.ylq.community.entity.ActivityImg;
 import pers.ylq.community.entity.Admin;
+import pers.ylq.community.entity.Manager;
 import pers.ylq.community.service.ActivityImgServer;
 import pers.ylq.community.service.ActivityService;
 
@@ -88,6 +89,30 @@ public class ActivityController {
         return resultVo;
     }
 
+    @RequestMapping("/findNotAduitActivityByBelong")
+    @ResponseBody
+    public ResultVo findNotAduitActivityByBelong(HttpServletRequest request, ConditionSearch condition) {
+        Manager user = (Manager) request.getSession().getAttribute("user");
+        ResultVo<List<Activity>> resultVo = activityService.findNotAduitActivityByBelong(condition, user.getBelong());
+        return resultVo;
+    }
+
+    @RequestMapping("/findActivityByBelong")
+    @ResponseBody
+    public ResultVo findActivityByBelong(HttpServletRequest request, ConditionSearch condition){
+        Manager user = (Manager) request.getSession().getAttribute("user");
+        ResultVo<List<Activity>> resultVo = activityService.findActivityByBelong(condition, user.getBelong());
+        return resultVo;
+    }
+
+    @RequestMapping("/findNotPassActivityByBelong")
+    @ResponseBody
+    public ResultVo findNotPassActivityByBelong(HttpServletRequest request, ConditionSearch condition) {
+        Manager user = (Manager) request.getSession().getAttribute("user");
+        ResultVo<List<Activity>> resultVo = activityService.findNotPassActivityByBelong(condition, user.getBelong());
+        return resultVo;
+    }
+
     @RequestMapping("/passActivityById")
     @ResponseBody
     public ResultVo passActivityById(HttpServletRequest request, Integer activityId) {
@@ -112,8 +137,26 @@ public class ActivityController {
 
         Integer activityId = (Integer) resultVo.getData();
 
-        Map<String,String> map=activityDTO.getImgs();
-        if(map==null)return resultVo;
+        Map<String, String> map = activityDTO.getImgs();
+        if (map == null) return resultVo;
+        for (String s : map.keySet()) {
+            ActivityImg activityImg = new ActivityImg();
+            activityImg.setActivityId(activityId);
+            activityImg.setUrl(map.get(s));
+            activityImgServer.addActivityImg(activityImg);
+        }
+        return resultVo;
+    }
+
+    @RequestMapping("/updateActivity")
+    @ResponseBody
+    public ResultVo updateActivity(ActivityDTO activityDTO) {
+        ResultVo resultVo = activityService.updateActivity(activityDTO);
+        if (resultVo.getStatus() == -1) return resultVo;
+
+        Integer activityId = activityDTO.getId();
+        Map<String, String> map = activityDTO.getImgs();
+        if (map == null) return resultVo;
         for (String s : map.keySet()) {
             ActivityImg activityImg = new ActivityImg();
             activityImg.setActivityId(activityId);

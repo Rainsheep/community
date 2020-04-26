@@ -128,7 +128,15 @@
 <script type="text/javascript">
     var E = window.wangEditor;
     var editor = new E('#editor');
-    editor.customConfig.uploadImgShowBase64 = true;
+    editor.customConfig.uploadImgServer = '../file/upload';
+    editor.customConfig.uploadFileName = 'file';
+    editor.customConfig.uploadImgHooks = {
+        customInsert: function (insertImg, res, editor) {
+            for (var key in res["data"]) {
+                insertImg('${pageContext.request.contextPath}'+res["data"][key]);
+            }
+        }
+    };
     editor.create();
     E.fullscreen.init('#editor');
 </script>

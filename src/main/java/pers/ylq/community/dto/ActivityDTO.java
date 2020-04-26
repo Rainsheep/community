@@ -11,6 +11,7 @@ import java.util.Map;
 
 @Data
 public class ActivityDTO implements Serializable {
+    private Integer id;
     private String name;
     private Date datetime;
     private String place;

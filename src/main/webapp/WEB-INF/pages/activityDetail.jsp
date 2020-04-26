@@ -40,9 +40,11 @@
 </head>
 <body>
 <c:if test="${empty onlyContent}">
-    <%@ include file="header.html" %>
+    <div style="height: 50px;">
+        <%@ include file="header.html" %>
+    </div>
 </c:if>
-<div class="wrap" style="margin-top: 50px">
+<div class="wrap">
     <%-- 左侧导航   --%>
     <div class="wrap_right">
         <h3 class="fenlei">活动详情</h3>
@@ -177,7 +179,7 @@
         $("#p_activityPlace").html("${activity.place}");
         $("#p_activityBelong").html("${activity.cname}");
         $("#p_activityAmount").html("${activity.amount}");
-        $("#p_activityDetail").html("${activity.brDetail}");
+        $("#p_activityDetail").html('${activity.brDetail}');
         $("#p_mname").html("${activity.managerRealName}");
         $("#p_aname").html("${activity.adminRealName}");
         $("#p_updateTime").html("${activity.formatUpdateTime}");

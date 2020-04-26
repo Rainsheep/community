@@ -108,13 +108,13 @@
                                 <a lay-href="${pageContext.request.contextPath}/manage/addActivity">申请活动</a>
                             </dd>
                             <dd>
-                                <a lay-href="${pageContext.request.contextPath}/admin/activityList">已通过的活动</a>
+                                <a lay-href="${pageContext.request.contextPath}/manage/passedActivity">已通过的活动</a>
                             </dd>
                             <dd>
-                                <a lay-href="${pageContext.request.contextPath}/admin/activityList">未审核的活动</a>
+                                <a lay-href="${pageContext.request.contextPath}/manage/notAduitActivity">未审核的活动</a>
                             </dd>
                             <dd>
-                                <a lay-href="${pageContext.request.contextPath}/admin/activityList">被驳回的活动</a>
+                                <a lay-href="${pageContext.request.contextPath}/manage/notPassActivity">被驳回的活动</a>
                             </dd>
                         </dl>
                     </li>
@@ -128,6 +128,21 @@
                         <dl class="layui-nav-child">
                             <dd>
                                 <a lay-href="${pageContext.request.contextPath}/manage/updateCommunity">社团信息</a>
+                            </dd>
+                        </dl>
+                    </li>
+
+                    <li data-name="support" class="layui-nav-item">
+                        <a href="javascript:;" lay-tips="赞助管理" lay-direction="2">
+                            <i class="layui-icon layui-icon-senior"></i>
+                            <cite>赞助管理</cite>
+                        </a>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a lay-href="${pageContext.request.contextPath}/manage/activitySupport">赞助信息</a>
+                            </dd>
+                            <dd>
+                                <a lay-href="${pageContext.request.contextPath}/manage/addBill">添加账单</a>
                             </dd>
                         </dl>
                     </li>

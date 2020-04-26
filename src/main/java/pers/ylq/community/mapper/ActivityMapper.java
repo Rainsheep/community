@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pers.ylq.community.dto.ConditionSearch;
 import pers.ylq.community.entity.Activity;
+import pers.ylq.community.entity.ActivitySupport;
 import pers.ylq.community.utils.SqlProvider;
 
 import java.util.List;
@@ -39,9 +40,17 @@ public interface ActivityMapper {
     })
     List<Activity> findAll(ConditionSearch condition);
 
-    @Select("select * from tb_activity where type=2")
+    @Select("select * from tb_activity where type=2 and status!=-1")
     @ResultMap("activityMap")
     List<Activity> findNotAduitActivity();
+
+    @Select("select * from tb_activity where type=2 and status!=-1 and belong=#{belong}")
+    @ResultMap("activityMap")
+    List<Activity> findNotAduitActivityByBelong(Integer belong);
+
+    @Select("select * from tb_activity where type=3 and status!=-1 and belong=#{belong}")
+    @ResultMap("activityMap")
+    List<Activity> findNotPassActivityByBelong(Integer belong);
 
     @Select("select * from tb_activity where id=#{activityId}")
     @ResultMap("activityMap")
@@ -54,13 +63,41 @@ public interface ActivityMapper {
     Integer delActivityById(Integer activityId);
 
     @Update("update tb_activity set type=1,aid=#{arg1},update_time=NULL where id=#{arg0}")
-    Integer passActivityById(Integer activityId,Integer aid);
+    Integer passActivityById(Integer activityId, Integer aid);
 
     @Update("update tb_activity set type=3,aid=#{arg2},update_time=NULL,dismiss_message=#{arg1} where id=#{arg0}")
-    Integer rejectActivityById(Integer activityId,String message,Integer aid);
+    Integer rejectActivityById(Integer activityId, String message, Integer aid);
 
     @Insert("insert into tb_activity(name,datetime,place,belong,amount,detail,sponsor_money,mid,type) values(#{name},#{datetime},#{place},#{belong},#{amount},#{detail},#{sponsorMoney},#{mid},#{type})")
     @Options(useGeneratedKeys = true, keyProperty = "id")
     Integer addActivity(Activity activity);
 
+    @Update("update tb_activity set name=#{name},datetime=#{datetime},place=#{place},belong=#{belong},amount=#{amount},detail=#{detail},sponsor_money=#{sponsorMoney},mid=#{mid},type=#{type},update_time=NULL where id=#{id}")
+    Integer updateActivity(Activity activity);
+
+    @Select("select * from tb_activity where type=1 and status!=-1 and belong=#{belong}")
+    @ResultMap("activityMap")
+    List<Activity> findActivityByBelong(Integer belong);
+
+    @Results(id = "activitySupportMap", value = {
+            @Result(id = true, property = "id", column = "id"),
+            @Result(property = "name", column = "name"),
+            @Result(property = "datetime", column = "datetime"),
+            @Result(property = "place", column = "place"),
+            @Result(property = "belong", column = "belong"),
+            @Result(property = "cname", column = "belong",
+                    one = @One(select = "pers.ylq.community.mapper.CommunityMapper.findNameById")),
+            @Result(property = "amount", column = "amount"),
+            @Result(property = "sponsorMoney", column = "sponsor_money"),
+            @Result(property = "nowMoney", column = "id", one = @One(select = "pers.ylq.community.mapper.SupportMapper.findMoneySumByActivityId"))
+    })
+    @Select("select * from tb_activity where type=1 and status!=-1 and belong=#{belong}")
+    List<ActivitySupport> findActivitySupportByBelong(Integer belong);
+
+    @Select("select * from tb_activity where type=1 and status!=-1")
+    @ResultMap("activitySupportMap")
+    List<ActivitySupport> findAllActivitySupport();
+
+    @Select("select name from tb_activity where id=#{id}")
+    String findNameById(Integer id);
 }

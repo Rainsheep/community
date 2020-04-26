@@ -8,10 +8,12 @@ import pers.ylq.community.dto.ActivityDTO;
 import pers.ylq.community.dto.ConditionSearch;
 import pers.ylq.community.dto.ResultVo;
 import pers.ylq.community.entity.Activity;
+import pers.ylq.community.entity.ActivitySupport;
 import pers.ylq.community.mapper.ActivityMapper;
 import pers.ylq.community.mapper.CommunityMapper;
 import pers.ylq.community.service.ActivityService;
 
+import java.util.Date;
 import java.util.List;
 
 @Service("activityService")
@@ -84,6 +86,79 @@ public class ActivityServiceImpl implements ActivityService {
     }
 
     @Override
+    public ResultVo<List<Activity>> findNotAduitActivityByBelong(ConditionSearch condition, Integer belong) {
+        PageHelper.startPage(condition.getPage(), condition.getLimit());
+        List<Activity> activities = activityMapper.findNotAduitActivityByBelong(belong);
+        PageInfo<Activity> activityPageInfo = new PageInfo<>(activities);
+
+        ResultVo<List<Activity>> resultVo = new ResultVo<>(0, 0, "", activityPageInfo.getList());
+        resultVo.setCount((int) activityPageInfo.getTotal());
+        return resultVo;
+    }
+
+    @Override
+    public ResultVo<List<Activity>> findNotPassActivityByBelong(ConditionSearch condition, Integer belong) {
+        PageHelper.startPage(condition.getPage(), condition.getLimit());
+        List<Activity> activities = activityMapper.findNotPassActivityByBelong(belong);
+        PageInfo<Activity> activityPageInfo = new PageInfo<>(activities);
+
+        ResultVo<List<Activity>> resultVo = new ResultVo<>(0, 0, "", activityPageInfo.getList());
+        resultVo.setCount((int) activityPageInfo.getTotal());
+        return resultVo;
+    }
+
+    @Override
+    public ResultVo findActivityByBelong(ConditionSearch condition, Integer belong) {
+        PageHelper.startPage(condition.getPage(), condition.getLimit());
+        List<Activity> activities = activityMapper.findActivityByBelong(belong);
+        PageInfo<Activity> activityPageInfo = new PageInfo<>(activities);
+
+        ResultVo<List<Activity>> resultVo = new ResultVo<>(0, 0, "", activityPageInfo.getList());
+        resultVo.setCount((int) activityPageInfo.getTotal());
+        return resultVo;
+    }
+
+    @Override
+    public ResultVo<List<ActivitySupport>> findActivitySupportByBelong(Integer page, Integer limit, Integer belong) {
+        PageHelper.startPage(page, limit);
+        List<ActivitySupport> activitySupportList = activityMapper.findActivitySupportByBelong(belong);
+
+        Date nowDate = new Date();
+        for (ActivitySupport activitySupport : activitySupportList) {
+            if (activitySupport.getDatetime().getTime() <= nowDate.getTime()) {
+                activitySupport.setSupportStatus("不可赞助");
+            } else {
+                activitySupport.setSupportStatus("可赞助");
+            }
+        }
+
+        PageInfo<ActivitySupport> activitySupportPageInfo = new PageInfo<>(activitySupportList);
+        ResultVo<List<ActivitySupport>> resultVo = new ResultVo<>(0, 0, "", activitySupportPageInfo.getList());
+        resultVo.setCount((int) activitySupportPageInfo.getTotal());
+        return resultVo;
+    }
+
+    @Override
+    public ResultVo<List<ActivitySupport>> findAllActivitySupport(Integer page, Integer limit) {
+        PageHelper.startPage(page, limit);
+        List<ActivitySupport> activitySupportList = activityMapper.findAllActivitySupport();
+
+        Date nowDate = new Date();
+        for (ActivitySupport activitySupport : activitySupportList) {
+            if (activitySupport.getDatetime().getTime() <= nowDate.getTime()) {
+                activitySupport.setSupportStatus("不可赞助");
+            } else {
+                activitySupport.setSupportStatus("可赞助");
+            }
+        }
+
+        PageInfo<ActivitySupport> activitySupportPageInfo = new PageInfo<>(activitySupportList);
+        ResultVo<List<ActivitySupport>> resultVo = new ResultVo<>(0, 0, "", activitySupportPageInfo.getList());
+        resultVo.setCount((int) activitySupportPageInfo.getTotal());
+        return resultVo;
+    }
+
+    @Override
     public ResultVo passActivityById(Integer activityId, Integer aid) {
         Integer flag = activityMapper.passActivityById(activityId, aid);
         ResultVo resultVo = null;
@@ -136,5 +211,36 @@ public class ActivityServiceImpl implements ActivityService {
 
         return resultVo;
     }
+
+    @Override
+    public ResultVo updateActivity(ActivityDTO activityDTO) {
+        Activity activity = new Activity();
+        activity.setId(activityDTO.getId());
+        activity.setName(activityDTO.getName());
+        activity.setDatetime(activityDTO.getDatetime());
+        activity.setPlace(activityDTO.getPlace());
+        activity.setBelong(activityDTO.getBelong());
+        activity.setAmount(activityDTO.getAmount());
+        activity.setDetail(activityDTO.getDetail());
+        activity.setSponsorMoney(activityDTO.getSponsorMoney());
+        activity.setMid(activityDTO.getMid());
+        activity.setType(activityDTO.getType());
+
+        ResultVo resultVo = null;
+        Integer flag = 0;
+        try {
+            flag = activityMapper.updateActivity(activity);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (flag <= 0) {
+            resultVo = new ResultVo<>(0, -1, "修改失败!", null);
+        } else {
+            resultVo = new ResultVo<>(0, 0, "修改成功!", activity.getId());
+        }
+
+        return resultVo;
+    }
+
 
 }

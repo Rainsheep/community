@@ -3,6 +3,7 @@ package pers.ylq.community.entity;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -27,30 +28,48 @@ public class Activity implements Serializable {
     private String dismissMessage;  //驳回信息
     private List<ActivityImg> images;
 
-    public String getFormatDate(){
+    public String getFormatDate() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm");
         return sdf.format(datetime);
     }
-    public String getMonthAndDay(){
+
+    public String getFormatDate2() {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return sdf.format(datetime);
+    }
+
+    public String getMonthAndDay() {
         SimpleDateFormat sdf = new SimpleDateFormat("MM-dd");
         return sdf.format(datetime);
     }
-    public String getFormatUpdateTime(){
+
+    public String getFormatUpdateTime() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
         return sdf.format(updateTime);
     }
-    public String getBrDetail(){
-        String brDetail=null;
-        if(detail!=null){
+
+    public String getBrDetail() {
+        String brDetail = null;
+        if (detail != null) {
             brDetail = detail.replaceAll("\r\n", "<br>");
         }
         return brDetail;
     }
-    public String getSimpleDetail(){
-        if(detail.length()>=45){
-            return detail.substring(0, 45)+"...";
-        }else{
+
+    public String getSimpleDetail() {
+        if (detail.length() >= 45) {
+            return detail.substring(0, 45) + "...";
+        } else {
             return detail;
+        }
+    }
+
+    public String getFormatSponsorMoney() {
+        DecimalFormat decimalFormat = new DecimalFormat("###,###.00");
+        if (sponsorMoney != null && sponsorMoney != 0) {
+            return decimalFormat.format(sponsorMoney);
+        } else {
+            return "0";
         }
     }
 }

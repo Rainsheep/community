@@ -15,4 +15,9 @@ public class ActivityImgServiceImpl implements ActivityImgServer {
     public void addActivityImg(ActivityImg activityImg) {
         activityImgMapper.addActivityImg(activityImg);
     }
+
+    @Override
+    public void delActivityImgByActivityId(Integer activityId) {
+        activityImgMapper.delActivityImgByActivityId(activityId);
+    }
 }

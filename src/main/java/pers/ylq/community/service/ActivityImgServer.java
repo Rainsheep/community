@@ -5,4 +5,6 @@ import pers.ylq.community.entity.ActivityImg;
 
 public interface ActivityImgServer {
     void addActivityImg(ActivityImg activityImg);
+
+    void delActivityImgByActivityId(Integer activityId);
 }

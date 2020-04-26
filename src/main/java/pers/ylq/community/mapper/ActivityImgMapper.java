@@ -1,5 +1,6 @@
 package pers.ylq.community.mapper;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -14,4 +15,7 @@ public interface ActivityImgMapper {
 
     @Insert("insert into tb_activityimg values(NULL,#{activityId},#{url})")
     Integer addActivityImg(ActivityImg activityImg);
+
+    @Delete("delete from tb_activityimg where activity_id=#{activityId}")
+    void delActivityImgByActivityId(Integer activityId);
 }

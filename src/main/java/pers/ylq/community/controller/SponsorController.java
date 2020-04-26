@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import pers.ylq.community.dto.ResultVo;
 import pers.ylq.community.dto.SponsorConditionSearch;
+import pers.ylq.community.entity.Manager;
 import pers.ylq.community.entity.Sponsor;
 import pers.ylq.community.service.SponsorService;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -61,5 +63,20 @@ public class SponsorController {
         System.out.println(sponsor);
         ResultVo resultVo = sponsorService.addSponsor(sponsor);
         return resultVo;
+    }
+
+    @RequestMapping("/updateSponsor")
+    @ResponseBody
+    public ResultVo updateSponsor(Sponsor sponsor) {
+        return sponsorService.updateSponsorBySid(sponsor);
+    }
+
+    @RequestMapping("/updatePassword")
+    public @ResponseBody
+    ResultVo updatePassword(HttpServletRequest request, String oldPassword, String newPassword) {
+        Sponsor user = (Sponsor) request.getSession().getAttribute("user");
+        Integer sid = user.getSid();
+        ResultVo result = sponsorService.updatePasswordById(oldPassword, newPassword, sid);
+        return result;
     }
 }

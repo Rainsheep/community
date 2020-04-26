@@ -10,8 +10,20 @@ import java.util.List;
 
 public interface SponsorService {
     PageInfo findAll(SponsorConditionSearch condition);
+
     Sponsor findSponsorBySnameAndPassword(LoginDTO loginDTO);
+
     ResultVo delSponsorById(Integer sid);
+
     ResultVo updateFieldBySidAndValue(Integer sid, String field, String value);
+
     ResultVo addSponsor(Sponsor sponsor);
+
+    String findRealNameBySid(Integer sid);
+
+    String findBelongBySid(Integer sid);
+
+    ResultVo updateSponsorBySid(Sponsor sponsor);
+
+    ResultVo updatePasswordById(String oldPassword, String newPassword, Integer sid);
 }

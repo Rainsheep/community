@@ -43,4 +43,19 @@ public interface SponsorMapper {
     @ResultMap("sponsorMap")
     Sponsor findSponsorBySname(String sname);
 
+    @Select("select real_name from tb_sponsor where sid=#{sid}")
+    String findRealNameBySid(Integer sid);
+
+    @Select("select belong from tb_sponsor where sid=#{sid}")
+    String findBelongBySid(Integer sid);
+
+    @Update("update tb_sponsor set sname=#{sname},password=#{password},real_name=#{realName},belong=#{belong},phone=#{phone},address=#{address},detail=#{detail} where sid=#{sid}")
+    Integer updateSponsorBySid(Sponsor sponsor);
+
+    @Select("select password from tb_sponsor where sid=#{sid}")
+    String findPasswordBySid(Integer sid);
+
+    @Update("update tb_sponsor set password=#{arg0} where sid=#{arg1}")
+    Integer updatePassowrdBySid(String newPassword, Integer sid);
+
 }

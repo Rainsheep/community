@@ -123,49 +123,56 @@
 </head>
 
 <body>
+
+
 <c:if test="${empty onlyContent}">
-    <%@ include file="header.html" %>
+    <div style="height: 50px">
+        <%@ include file="header.html" %>
+    </div>
 </c:if>
+
 
 <!--内容开始 -->
 <c:if test="${empty onlyContent}">
-    <div class="wrap" style="margin-top: 50px">
-</c:if>
-<c:if test="${not empty onlyContent}">
+<div class="wrap">
+    </c:if>
+    <c:if test="${not empty onlyContent}">
     <div class="wrap">
-</c:if>
-
-    <div class="wrap_left1">
-        <c:if test="${empty onlyContent}">
-            <div class="ltop">
-                <h3>通知详情</h3>
-            </div>
         </c:if>
-        <!-- 新闻详情 -->
-        <div class="news_content">
-            <h1>${notice.title}</h1>
-            <div class="attr tc"> ( 发布者:${notice.aname} &nbsp;&nbsp;&nbsp;&nbsp;发布日期:${notice.formatDate} )</div>
-            <div class="detail-content-body">
-                ${notice.content}
 
-                <br>
-                <c:forEach items="${notice.noticeFiles}" var="file" varStatus="s">
-                    附件${s.index+1}:  <a href="${pageContext.request.contextPath}/file/download?filename=${file.filename}&url=${file.url}" style="color: blue">${file.filename}</a><br>
-                </c:forEach>
+        <div class="wrap_left1">
+            <c:if test="${empty onlyContent}">
+                <div class="ltop">
+                    <h3>通知详情</h3>
+                </div>
+            </c:if>
+            <!-- 新闻详情 -->
+            <div class="news_content">
+                <h1>${notice.title}</h1>
+                <div class="attr tc"> ( 发布者:${notice.aname} &nbsp;&nbsp;&nbsp;&nbsp;发布日期:${notice.formatDate} )</div>
+                <div class="detail-content-body">
+                    ${notice.content}
+
+                    <br>
+                    <c:forEach items="${notice.noticeFiles}" var="file" varStatus="s">
+                        附件${s.index+1}: <a
+                            href="${pageContext.request.contextPath}/file/download?filename=${file.filename}&url=${file.url}"
+                            style="color: blue">${file.filename}</a><br>
+                    </c:forEach>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<c:if test="${empty onlyContent}">
-    <%@ include file="footer.html" %>
-</c:if>
-<!--置顶开始-->
-<div class="fix-nav" id="fix-nav" style="display: block;">
-    <div class="fix-nav-wrap"><img class="i-totop" src="${pageContext.request.contextPath}/images/to_top.png"/>
+    <c:if test="${empty onlyContent}">
+        <%@ include file="footer.html" %>
+    </c:if>
+    <!--置顶开始-->
+    <div class="fix-nav" id="fix-nav" style="display: block;">
+        <div class="fix-nav-wrap"><img class="i-totop" src="${pageContext.request.contextPath}/images/to_top.png"/>
+        </div>
     </div>
-</div>
-<!--置顶结束 -->
+    <!--置顶结束 -->
 </body>
 
 </html>

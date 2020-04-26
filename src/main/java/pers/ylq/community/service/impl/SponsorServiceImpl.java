@@ -2,6 +2,7 @@ package pers.ylq.community.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pers.ylq.community.dto.LoginDTO;
@@ -91,5 +92,47 @@ public class SponsorServiceImpl implements SponsorService {
             resultVo = new ResultVo<>(0, 0, "添加成功!", null);
         }
         return resultVo;
+    }
+
+    @Override
+    public String findRealNameBySid(Integer sid) {
+        return sponsorMapper.findRealNameBySid(sid);
+    }
+
+    @Override
+    public String findBelongBySid(Integer sid) {
+        return sponsorMapper.findBelongBySid(sid);
+    }
+
+    @Override
+    public ResultVo updateSponsorBySid(Sponsor sponsor) {
+        ResultVo resultVo = null;
+        Integer flag = 0;
+        try {
+            flag = sponsorMapper.updateSponsorBySid(sponsor);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if (flag <= 0) resultVo = new ResultVo<>(0, -1, "修改失败!", null);
+        else {
+            resultVo = new ResultVo<>(0, 0, "修改成功!", null);
+        }
+        return resultVo;
+    }
+
+    @Override
+    public ResultVo updatePasswordById(String oldPassword, String newPassword, Integer sid) {
+        ResultVo result = null;
+        if (!oldPassword.equals(sponsorMapper.findPasswordBySid(sid))) {
+            result = new ResultVo<>(0, 1, "当前密码错误!", null);
+        } else {
+            Integer flag = sponsorMapper.updatePassowrdBySid(newPassword, sid);
+            if (flag <= 0) {
+                result = new ResultVo<>(0, 1, "修改失败!", null);
+            } else {
+                result = new ResultVo<>(0, 0, "修改成功!", null);
+            }
+        }
+        return result;
     }
 }
