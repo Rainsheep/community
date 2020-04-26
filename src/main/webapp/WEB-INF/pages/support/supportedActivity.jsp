@@ -77,7 +77,8 @@
         table.on('tool(test-table-toolbar)', function (obj) {
             var data = obj.data;
             if (obj.event === 'detail') {
-                window.open("${pageContext.request.contextPath}/activity/activityDetail?activityId=" + data.activityId);
+                <%--window.open("${pageContext.request.contextPath}/activity/activityDetail?activityId=" + data.activityId);--%>
+                newTab("${pageContext.request.contextPath}/activity/activityDetail?onlyContent=1&activityId=" + data.activityId, "活动详情");
             } else if (obj.event === 'bill') {
                 newTab("${pageContext.request.contextPath}/support/spendBill?supportId=" + data.id, "花销账单");
             }

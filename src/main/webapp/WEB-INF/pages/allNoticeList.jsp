@@ -123,6 +123,11 @@
             -o-text-overflow: ellipsis;
             overflow: hidden;
         }
+        <c:if test="${not empty isAdmin}">
+        body {
+            background-color: white;
+        }
+        </c:if>
     </style>
     <script>
         //导航

@@ -41,8 +41,9 @@
                     </script>
 
                     <script type="text/html" id="test-table-toolbar-barDemo">
+                        <a class="layui-btn layui-btn-xs" lay-event="detail">活动详情</a>
                         {{#  if(d.supportStatus == '可赞助'){ }}
-                        <a class="layui-btn layui-btn-xs" lay-event="add">赞助活动</a>
+                        <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="add">赞助活动</a>
                         {{#  }else{ }}
                         <button class="layui-btn layui-btn-disabled layui-btn-xs" disabled>不可赞助</button>
                         {{#  } }}
@@ -109,6 +110,8 @@
                         if (res.status === 0) tableIns.reload();
                     })
                 });
+            } else if (obj.event === 'detail') {
+                newTab("${pageContext.request.contextPath}/activity/activityDetail?onlyContent=1&activityId=" + data.id, "活动详情");
             }
         });
 

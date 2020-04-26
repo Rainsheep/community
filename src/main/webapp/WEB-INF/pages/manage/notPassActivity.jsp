@@ -144,7 +144,8 @@
                 });
             } else if (obj.event === 'detail') {
                 var data = obj.data;
-                window.open("${pageContext.request.contextPath}/activity/activityDetail?activityId=" + data.id);
+                <%--window.open("${pageContext.request.contextPath}/activity/activityDetail?activityId=" + data.id);--%>
+                newTab("${pageContext.request.contextPath}/activity/activityDetail?onlyContent=1&activityId=" + data.id, "活动详情");
             } else if (obj.event === 'update') {
                 top.layui.index.openTabsPage("${pageContext.request.contextPath}/manage/updateActivityById?id=" + data.id, "修改活动")
             } else if (obj.event === 'message') {

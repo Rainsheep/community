@@ -7,76 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ca91f71-6fa2-481d-9259-9f16d62ca1c1" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/ActivityImgController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/BillController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/BillDetailController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/BillProveController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/dto/BillDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/dto/BillDTO2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/dto/BillDTO3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/dto/BillDetailDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/entity/ActivitySupport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/entity/Bill.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/entity/BillDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/entity/BillProve.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/entity/Support.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/BillDetailMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/BillMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/BillProveMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/BillDetailServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/BillProveServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/BillService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/SupportService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/impl/BillDetailServerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/impl/BillProveServerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/impl/BillServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/impl/SupportServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/activityBill.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/activitySupport.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/addBill.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/billDetail.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/notAduitActivity.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/notPassActivity.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/passedActivity.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/supportDetail.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/updateActivity.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/activitySupport.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/billDetail.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/spendBill.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/supportedActivity.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/updatePassword.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/userInfo.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/pers/ylq/community/service/BillServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/community.iml" beforeDir="false" afterPath="$PROJECT_DIR$/community.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/ActivityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/ActivityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/ManageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/ManageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/SponsorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/SponsorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/SupportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/SupportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/dto/ActivityDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/dto/ActivityDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/entity/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/entity/Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/ActivityImgMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/ActivityImgMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/ActivityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/ActivityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/ManagerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/ManagerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/SponsorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/SponsorMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/SupportMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/SupportMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/ActivityImgServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/ActivityImgServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/ActivityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/ActivityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/SponsorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/SponsorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/impl/ActivityImgServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/impl/ActivityImgServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/impl/ActivityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/impl/ActivityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/impl/SponsorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/ylq/community/service/impl/SponsorServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/activityDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/activityDetail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/addNotice.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/addNotice.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/activityList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/activityList.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/allNoticeList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/allNoticeList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/addActivity.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/addActivity.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/notAduitActivity.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/notAduitActivity.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/notPassActivity.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/notPassActivity.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/passedActivity.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/passedActivity.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/noticeDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/noticeDetail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/activitySupport.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/activitySupport.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/supportedActivity.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/supportedActivity.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -91,23 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/activityDetail.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="42" column="16" lean-forward="true" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/noticeDetail.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/activitySupport.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1911">
-              <caret line="136" column="17" selection-start-line="136" selection-start-column="17" selection-end-line="136" selection-end-column="17" />
+            <state relative-caret-position="315">
+              <caret line="45" column="60" selection-start-line="45" selection-start-column="60" selection-end-line="45" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -125,7 +53,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>赞助商列表</find>
       <find>主页</find>
       <find>pageh</find>
       <find>管理员</find>
@@ -155,6 +82,7 @@
       <find>密码</find>
       <find>nav</find>
       <find>#e9f0fd</find>
+      <find>page</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\10766\Desktop\mycode\IDEA\community\src\main\webapp\layuiadmin</dir>
@@ -177,12 +105,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/addBill.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/entity/Support.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/supportDetail.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/BillDetailMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/BillProveMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/ManagerMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/entity/Bill.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
@@ -214,7 +136,6 @@
         <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/BillMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/BillController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/spendDetail.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/supportedActivity.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/dto/BillDTO2.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/BillDetail.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/spendBill.jsp" />
@@ -224,10 +145,17 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/footer.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/header.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/index.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/allNoticeList.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/noticeDetail.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/activityDetail.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/pers/ylq/community/entity/Activity.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/activityDetail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/noticeDetail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/allNoticeList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/activityList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/passedActivity.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/notAduitActivity.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/notPassActivity.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/supportedActivity.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/activitySupport.jsp" />
       </list>
     </option>
   </component>
@@ -282,10 +210,10 @@
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-67" />
-    <option name="y" value="68" />
+    <option name="x" value="-40" />
+    <option name="y" value="40" />
     <option name="width" value="1785" />
-    <option name="height" value="1073" />
+    <option name="height" value="1074" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="添加" />
@@ -360,7 +288,7 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="support" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="community" type="b2602c69:ProjectViewProjectNode" />
@@ -661,7 +589,7 @@
       <workItem from="1587574361579" duration="13965000" />
       <workItem from="1587786405679" duration="3777000" />
       <workItem from="1587840672549" duration="11904000" />
-      <workItem from="1587910760091" duration="6886000" />
+      <workItem from="1587910760091" duration="11029000" />
     </task>
     <task id="LOCAL-00001" summary="开启毕设，先搭个环境">
       <created>1584691305335</created>
@@ -859,7 +787,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587334547056</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="重要！完成系统，版本1.0">
+      <created>1587931621859</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1587931621859</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -895,7 +830,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="435022000" />
+    <option name="totallyTimeSpent" value="439165000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -907,7 +842,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-31" y="32" width="1428" height="858" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
@@ -1034,53 +969,10 @@
     <MESSAGE value="优化了删除功能，完成了活动审核" />
     <MESSAGE value="完成了超级管理员管理" />
     <MESSAGE value="完成了申请活动功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成了申请活动功能" />
+    <MESSAGE value="重要！完成系统，版本1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="重要！完成系统，版本1.0" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/pers/ylq/community/service/BillProveServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="58" selection-start-line="7" selection-start-column="58" selection-end-line="7" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/BillDetailController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/BillProveController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/activityBill.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="91" column="8" selection-start-line="91" selection-start-column="8" selection-end-line="97" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/FileController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="56" column="48" lean-forward="true" selection-start-line="56" selection-start-column="48" selection-end-line="56" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/addSponsor.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -1176,13 +1068,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/passedActivity.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="120" column="9" lean-forward="true" selection-end-line="153" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pers/ylq/community/mapper/SupportMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
@@ -1269,13 +1154,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/supportedActivity.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="73" column="9" lean-forward="true" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/BillController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
@@ -1307,13 +1185,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pers/ylq/community/entity/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="47" column="38" lean-forward="true" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1420,16 +1291,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/allNoticeList.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="271" column="10" selection-start-line="271" selection-start-column="10" selection-end-line="271" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3843">
@@ -1437,20 +1298,83 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/activityDetail.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pers/ylq/community/entity/Activity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="42" column="16" lean-forward="true" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="441">
+          <caret line="27" column="42" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/noticeDetail.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1911">
-          <caret line="136" column="17" selection-start-line="136" selection-start-column="17" selection-end-line="136" selection-end-column="17" />
+        <state relative-caret-position="294">
+          <caret line="119" column="15" selection-start-line="119" selection-start-column="15" selection-end-line="119" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/allNoticeList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2625">
+          <caret line="125" column="26" selection-start-line="125" selection-start-column="26" selection-end-line="125" selection-end-column="26" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/activityDetail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="32" column="43" lean-forward="true" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/admin/activityList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="143" column="129" lean-forward="true" selection-start-line="143" selection-start-column="16" selection-end-line="143" selection-end-column="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pers/ylq/community/controller/ActivityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="638">
+          <caret line="69" column="14" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/passedActivity.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="144" column="129" selection-start-line="144" selection-start-column="129" selection-end-line="144" selection-end-column="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/notAduitActivity.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="146" column="129" selection-start-line="146" selection-start-column="129" selection-end-line="146" selection-end-column="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/manage/notPassActivity.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="147" column="129" selection-start-line="147" selection-start-column="129" selection-end-line="147" selection-end-column="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/supportedActivity.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="80" column="124" lean-forward="true" selection-start-line="80" selection-start-column="124" selection-end-line="80" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/support/activitySupport.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="45" column="60" selection-start-line="45" selection-start-column="60" selection-end-line="45" selection-end-column="60" />
         </state>
       </provider>
     </entry>
