@@ -113,6 +113,14 @@
             ;
         });
 
+        function newTab(url, tit) {
+            if (top.layui.index) {
+                top.layui.index.openTabsPage(url, tit)
+            } else {
+                window.open(url)
+            }
+        }
+
         //监听行工具事件
         table.on('tool(test-table-toolbar)', function (obj) {
             var data = obj.data;
@@ -134,7 +142,8 @@
                 });
             } else if (obj.event === 'detail') {
                 var data = obj.data;
-                window.open("${pageContext.request.contextPath}/activity/activityDetail?activityId=" + data.id);
+                newTab("${pageContext.request.contextPath}/activity/activityDetail?onlyContent=1&activityId=" + data.id, "活动详情");
+                <%--window.open("${pageContext.request.contextPath}/activity/activityDetail?activityId=" + data.id);--%>
             } else if (obj.event === 'pass') {
                 layer.confirm('确定要通过审核吗？', function (index) {
                     layer.close(index);
@@ -152,7 +161,7 @@
             } else if (obj.event === 'reject') {
                 layer.prompt({
                     formType: 2,
-                    title:'驳回消息'
+                    title: '驳回消息'
                 }, function (value, index) {
                     layer.close(index);
                     $.post("${pageContext.request.contextPath}/activity/rejectActivityById", {
