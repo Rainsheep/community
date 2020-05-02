@@ -40,6 +40,11 @@ public class ManagerServiceImpl implements ManagerService {
         if (limit == null || limit == 0) limit = 10;
         PageHelper.startPage(page, limit);
         List<Manager> managers = managerMapper.findAll();
+        for (Manager manager : managers) {
+            String password = manager.getPassword();
+            password = password.replaceAll("(.).*(.)", "$1****$2");
+            manager.setPassword(password);
+        }
         PageInfo<Manager> pageInfo = new PageInfo<>(managers);
         return pageInfo;
     }

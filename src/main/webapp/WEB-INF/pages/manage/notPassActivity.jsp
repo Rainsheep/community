@@ -73,7 +73,7 @@
                 , {field: 'id', title: 'ID', fixed: 'left', width: 70, unresize: true, sort: true}
                 , {field: 'name', title: '活动名称', width: 180}
                 , {field: 'formatDate', title: '活动时间', width: 180, sort: true}
-                , {field: 'place', title: '活动地点', sort: true, width: 200}
+                , {field: 'place', title: '活动地点', width: 200}
                 , {field: 'dismissMessage', title: '驳回信息', width: 200, hide: true}
                 , {field: 'formatSponsorMoney', title: '所需金额', sort: true, width: 110}
                 , {field: 'formatUpdateTime', title: '驳回时间', width: 200, sort: true}

@@ -2,6 +2,7 @@ package pers.ylq.community.controller;
 
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +14,7 @@ import pers.ylq.community.service.CommunityService;
 
 import java.util.List;
 
-@Repository
+@Controller
 @RequestMapping("/community")
 public class CommunityController {
     @Autowired

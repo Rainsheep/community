@@ -13,5 +13,9 @@ public interface SupportService {
 
     ResultVo findSupportBySid(Integer page, Integer limit, Integer sid);
 
+    ResultVo findNotConfirmSupportByBelong(Integer page, Integer limit, Integer belong);
+
+    ResultVo updateTypeById(Integer id,Integer type);
+
 
 }

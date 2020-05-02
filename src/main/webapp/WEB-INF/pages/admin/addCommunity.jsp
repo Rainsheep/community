@@ -47,7 +47,7 @@
                 </div>
 
                 <div class="layui-form-item">
-                    <label class="layui-form-label">单行选择框</label>
+                    <label class="layui-form-label">社团等级</label>
                     <div class="layui-input-block">
                         <select name="level" lay-filter="aihao" lay-verify="required">
                             <option value=""></option>

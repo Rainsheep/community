@@ -28,8 +28,8 @@ public class SupportServiceImpl implements SupportService {
             e.printStackTrace();
         }
 
-        if (flag <= 0) resultVo = new ResultVo<>(0, -1, "添加失败!", null);
-        else resultVo = new ResultVo<>(0, 0, "添加成功!", null);
+        if (flag <= 0) resultVo = new ResultVo<>(0, -1, "申请失败!", null);
+        else resultVo = new ResultVo<>(0, 0, "申请成功!", null);
         return resultVo;
     }
 
@@ -50,6 +50,35 @@ public class SupportServiceImpl implements SupportService {
         PageInfo<Support> supportPageInfo = new PageInfo<>(supports);
         ResultVo<List<Support>> resultVo = new ResultVo<>(0, 0, "", supportPageInfo.getList());
         resultVo.setCount((int) supportPageInfo.getTotal());
+        return resultVo;
+    }
+
+    @Override
+    public ResultVo findNotConfirmSupportByBelong(Integer page, Integer limit, Integer belong) {
+        PageHelper.startPage(page, limit);
+        List<Support> supports = supportMapper.findNotConfirmSupportByBelong(belong);
+        PageInfo<Support> supportPageInfo = new PageInfo<>(supports);
+        ResultVo<List<Support>> resultVo = new ResultVo<>(0, 0, "", supportPageInfo.getList());
+        resultVo.setCount((int) supportPageInfo.getTotal());
+        return resultVo;
+    }
+
+    @Override
+    public ResultVo updateTypeById(Integer id, Integer type) {
+        Integer flag=0;
+        ResultVo resultVo=null;
+        try {
+            flag=supportMapper.updateTypeById(id, type);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if(flag<=0){
+            resultVo=new ResultVo<>(0, -1, "操作失败!", null);
+        }else{
+            resultVo=new ResultVo<>(0, 0, "操作成功!", null);
+        }
+
+
         return resultVo;
     }
 

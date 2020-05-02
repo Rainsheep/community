@@ -71,7 +71,7 @@
                 , {field: 'id', title: 'ID', fixed: 'left', width: 70, unresize: true, sort: true}
                 , {field: 'name', title: '活动名称', width: 250}
                 , {field: 'formatDate', title: '活动时间', width: 200, sort: true}
-                , {field: 'place', title: '活动地点', sort: true, width: 250}
+                , {field: 'place', title: '活动地点', width: 250}
                 , {field: 'cname', title: '所属社团', width: 130}
                 , {field: 'amount', title: '参与人数', width: 100, sort: true}
                 , {fixed: 'right', title: '操作', toolbar: '#test-table-toolbar-barDemo'}

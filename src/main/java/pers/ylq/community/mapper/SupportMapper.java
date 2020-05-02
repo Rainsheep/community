@@ -14,19 +14,19 @@ public interface SupportMapper {
      * @param sid
      * @return
      */
-    @Select("select count(activity_id) from tb_support where sid=#{sid}")
+    @Select("select count(activity_id) from tb_support where sid=#{sid} and type=0")
     Integer findActivityCountBySid(Integer sid);
 
     /**
      * 查询赞助商赞助的总金额
      */
-    @Select("SELECT SUM(money) FROM tb_support WHERE sid=#{sid}")
+    @Select("SELECT SUM(money) FROM tb_support WHERE sid=#{sid} and type=0")
     Double findMoneySumBySid(Integer sid);
 
-    @Select("SELECT SUM(money) FROM tb_support WHERE activity_id=#{activityId}")
+    @Select("SELECT SUM(money) FROM tb_support WHERE activity_id=#{activityId} and type=0")
     Double findMoneySumByActivityId(Integer id);
 
-    @Insert("insert into tb_support values(NULL,#{sid},#{activityId},#{money},#{leftMoney},NULL)")
+    @Insert("insert into tb_support values(NULL,#{sid},#{activityId},#{money},#{leftMoney},NULL,-1)")
     Integer addSupport(Support support);
 
     @Results(id = "supportMap", value = {
@@ -40,7 +40,7 @@ public interface SupportMapper {
             @Result(property = "leftMoney", column = "left_money"),
             @Result(property = "supportTime", column = "support_time")
     })
-    @Select("select * from tb_support where activity_id=#{activityId}")
+    @Select("select * from tb_support where activity_id=#{activityId} and type=0")
     List<Support> findSupportByActivityId(Integer activityId);
 
     @Update("update tb_support set left_money=left_money-#{arg1} where id=#{arg0}")
@@ -52,4 +52,11 @@ public interface SupportMapper {
     @Select("select * from tb_support where sid=#{sid}")
     @ResultMap("supportMap")
     List<Support> findSupportBySid(Integer sid);
+
+    @Select("SELECT * FROM tb_support WHERE TYPE=-1 AND activity_id IN (SELECT id FROM tb_activity WHERE belong=#{belong})")
+    @ResultMap("supportMap")
+    List<Support> findNotConfirmSupportByBelong(Integer belong);
+
+    @Update("UPDATE tb_support SET TYPE=#{arg1} WHERE id=#{arg0}")
+    Integer updateTypeById(Integer id,Integer type);
 }

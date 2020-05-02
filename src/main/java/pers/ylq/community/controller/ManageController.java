@@ -117,4 +117,14 @@ public class ManageController {
         model.addAttribute("billId", billId);
         return "manage/billDetail";
     }
+
+    @RequestMapping("/confirmSupport")
+    public String confirmSupport() {
+        return "manage/confirmSupport";
+    }
+
+    @RequestMapping("/communityMember")
+    public String communityMember() {
+        return "manage/communityMember";
+    }
 }

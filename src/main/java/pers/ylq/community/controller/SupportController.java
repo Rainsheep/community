@@ -108,12 +108,12 @@ public class SupportController {
 
     @RequestMapping("/getBillDetailFiles")
     @ResponseBody
-    public ResultVo getBillDetailFiles(HttpServletRequest request){
-        ResultVo resultVo=null;
+    public ResultVo getBillDetailFiles(HttpServletRequest request) {
+        ResultVo resultVo = null;
         BillDTO3 billDTO3 = (BillDTO3) request.getSession().getAttribute("billDTO3");
-        if(billDTO3!=null) {
+        if (billDTO3 != null) {
             List<BillProve> billProves = billDTO3.getBillProves();
-            resultVo=new ResultVo<>(0, 0, "", billProves);
+            resultVo = new ResultVo<>(0, 0, "", billProves);
         }
         return resultVo;
     }
@@ -123,4 +123,18 @@ public class SupportController {
         return "support/billDetail";
     }
 
+    @RequestMapping("/findNotConfirmSupportByBelong")
+    @ResponseBody
+    public ResultVo findNotConfirmSupportByBelong(HttpServletRequest request, Integer page, Integer limit) {
+        Manager user = (Manager) request.getSession().getAttribute("user");
+        ResultVo resultVo = supportService.findNotConfirmSupportByBelong(page, limit, user.getBelong());
+        return resultVo;
+    }
+
+    @RequestMapping("/updateTypeById")
+    @ResponseBody
+    public ResultVo updateTypeById(Integer id, Integer type) {
+        ResultVo resultVo = supportService.updateTypeById(id, type);
+        return resultVo;
+    }
 }

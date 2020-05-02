@@ -130,6 +130,11 @@
                                 <a lay-href="${pageContext.request.contextPath}/manage/updateCommunity">社团信息</a>
                             </dd>
                         </dl>
+                        <dl class="layui-nav-child">
+                            <dd>
+                                <a lay-href="${pageContext.request.contextPath}/manage/communityMember">社团成员</a>
+                            </dd>
+                        </dl>
                     </li>
 
                     <li data-name="support" class="layui-nav-item">
@@ -138,6 +143,9 @@
                             <cite>赞助管理</cite>
                         </a>
                         <dl class="layui-nav-child">
+                            <dd>
+                                <a lay-href="${pageContext.request.contextPath}/manage/confirmSupport">赞助申请</a>
+                            </dd>
                             <dd>
                                 <a lay-href="${pageContext.request.contextPath}/manage/activitySupport">赞助信息</a>
                             </dd>

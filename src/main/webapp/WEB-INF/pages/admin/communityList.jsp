@@ -41,6 +41,7 @@
                     </script>
 
                     <script type="text/html" id="test-table-toolbar-barDemo">
+                        <a class="layui-btn layui-btn-xs" lay-event="members">成员名单</a>
                         <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
                     </script>
                 </div>
@@ -74,7 +75,7 @@
                 , {field: 'activityNums', title: '社团活动数量', width: 130, sort: true}
                 , {field: 'formatDate', title: '社团成立时间', width: 200, sort: true}
                 , {field: 'level', title: '社团等级', edit: 'text'}
-                , {fixed: 'right', title: '操作', toolbar: '#test-table-toolbar-barDemo'}
+                , {fixed: 'right', title: '操作', toolbar: '#test-table-toolbar-barDemo',align:'center'}
             ]]
             , page: true
         });
@@ -112,6 +113,14 @@
             ;
         });
 
+        function newTab(url, tit) {
+            if (top.layui.index) {
+                top.layui.index.openTabsPage(url, tit)
+            } else {
+                window.open(url)
+            }
+        }
+
         //监听行工具事件
         table.on('tool(test-table-toolbar)', function (obj) {
             var data = obj.data;
@@ -131,6 +140,8 @@
 
                     });
                 });
+            } else if(obj.event === 'members'){
+                newTab("${pageContext.request.contextPath}/communityMember/members?belong="+data.cid,"成员名单");
             }
         });
 

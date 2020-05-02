@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>我赞助的活动</title>
+    <title>赞助申请</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -16,7 +16,7 @@
     <div class="layui-row layui-col-space15">
         <div class="layui-col-md12">
             <div class="layui-card">
-                <div class="layui-card-header">我赞助的活动</div>
+                <div class="layui-card-header">申请列表</div>
                 <div class="layui-card-body">
                     <table class="layui-hide" id="test-table-toolbar" lay-filter="test-table-toolbar"></table>
 
@@ -26,19 +26,9 @@
                         </div>
                     </script>
 
-                    <script type="text/html" id="zanzhu-status">
-                        {{#  if(d.type == 0){ }}
-                        <a class="layui-btn layui-btn-xs">已到账</a>
-                        {{#  } else if(d.type == 1){ }}
-                        <a class="layui-btn layui-btn-danger layui-btn-xs">被拒绝</a>
-                        {{#  } else { }}
-                        <a class="layui-btn layui-btn-normal layui-btn-xs">未到账</a>
-                        {{#  } }}
-                    </script>
-
                     <script type="text/html" id="test-table-toolbar-barDemo">
-                        <a class="layui-btn layui-btn-xs" lay-event="detail">活动详情</a>
-                        <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="bill">花销账单</a>
+                        <a class="layui-btn layui-btn-xs" lay-event="yes">确认到账</a>
+                        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="no">拒绝赞助</a>
                     </script>
                 </div>
             </div>
@@ -59,42 +49,49 @@
 
         var tableIns = table.render({
             elem: '#test-table-toolbar'
-            , url: '${pageContext.request.contextPath}/support/findSupportBySid'
+            , url: '${pageContext.request.contextPath}/support/findNotConfirmSupportByBelong'
             , toolbar: '#test-table-toolbar-toolbarDemo'
-            , title: '赞助活动列表'
+            , title: '赞助申请列表'
             , cols: [[
-                {field: 'id', title: '赞助记录ID', hide: true}
-                , {field: 'activityId', title: '活动ID', hide: true}
-                , {field: 'activityName', title: '活动名称', width: '20%'}
-                , {field: 'formatMoney', title: '赞助金额', sort: true, width: '12%'}
-                , {field: 'formatLeftMoney', title: '所剩金额', sort: true, width: '12%'}
-                , {field: 'formatSupportTime', title: '赞助时间', width: '25%', sort: true}
-                , {field: 'type', title: '赞助状态', toolbar: '#zanzhu-status', align: 'center'}
+                {field: 'id', title: '赞助ID', fixed: 'left', unresize: true, sort: true, hide: true}
+                , {field: 'activityName', title: '活动名称'}
+                , {field: 'realName', title: '赞助商'}
+                , {field: 'belong', title: '所属公司'}
+                , {field: 'formatMoney', title: '赞助金额', sort: true}
+                , {field: 'formatSupportTime', title: '赞助时间', sort: true}
                 , {fixed: 'right', title: '操作', toolbar: '#test-table-toolbar-barDemo', align: 'center'}
             ]]
             , page: true
         });
 
-
-        function newTab(url, tit) {
-            if (top.layui.index) {
-                top.layui.index.openTabsPage(url, tit)
-            } else {
-                window.open(url)
-            }
-        }
-
         //监听行工具事件
         table.on('tool(test-table-toolbar)', function (obj) {
             var data = obj.data;
-            if (obj.event === 'detail') {
-                <%--window.open("${pageContext.request.contextPath}/activity/activityDetail?activityId=" + data.activityId);--%>
-                newTab("${pageContext.request.contextPath}/activity/activityDetail?onlyContent=1&activityId=" + data.activityId, "活动详情");
-            } else if (obj.event === 'bill') {
-                newTab("${pageContext.request.contextPath}/support/spendBill?supportId=" + data.id, "花销账单");
+            if (obj.event === 'yes') {
+                layer.confirm('确定钱已到账?', function (index) {
+                    layer.close(index);
+                    $.post("${pageContext.request.contextPath}/support/updateTypeById", {
+                        id: data.id,
+                        type: 0
+                    }, function (res) {
+                        layer.msg(res.msg);
+                        tableIns.reload();
+                    });
+                });
+
+            } else if (obj.event === 'no') {
+                layer.confirm('确定拒绝此赞助?', function (index) {
+                    layer.close(index);
+                    $.post("${pageContext.request.contextPath}/support/updateTypeById", {
+                        id: data.id,
+                        type: 1
+                    }, function (res) {
+                        layer.msg(res.msg);
+                        tableIns.reload();
+                    });
+                });
             }
         });
-
 
     });
 </script>

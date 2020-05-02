@@ -18,6 +18,7 @@ public class Support implements Serializable {
     private Double money;
     private Double leftMoney;
     private Date supportTime;
+    private Integer type;
 
     public String getFormatSupportTime(){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");

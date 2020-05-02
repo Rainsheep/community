@@ -34,6 +34,11 @@ public class SponsorServiceImpl implements SponsorService {
             PageHelper.startPage(condition.getCurrentPage(), condition.getPageSize());
         }
         List<Sponsor> sponsors = sponsorMapper.findAll(condition.getKeyword());
+        for (Sponsor sponsor : sponsors) {
+            String password = sponsor.getPassword();
+            password = password.replaceAll("(.).*(.)", "$1****$2");
+            sponsor.setPassword(password);
+        }
         PageInfo<Sponsor> sponsorPageInfo = new PageInfo<>(sponsors);
         return sponsorPageInfo;
     }
