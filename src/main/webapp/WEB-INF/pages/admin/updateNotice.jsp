@@ -10,6 +10,7 @@
         <meta name="viewport"
               content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/layuiadmin/layui/css/layui.css" media="all">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/wangEditor/wangEditor-fullscreen-plugin.css">
         <link rel="stylesheet" href="${pageContext.request.contextPath}/layuiadmin/style/admin.css" media="all">
         <script src="${pageContext.request.contextPath}/layuiadmin/layui/layui.js"></script>
     </head>
@@ -99,12 +100,15 @@
     </div>
 </div>
 
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/wangEditor/wangEditor.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/wangEditor/wangEditor-fullscreen-plugin.js"></script>
 <script type="text/javascript">
     var E = window.wangEditor;
     var editor = new E('#editor');
     editor.customConfig.uploadImgShowBase64 = true;
-    editor.create()
+    editor.create();
+    E.fullscreen.init('#editor');
 </script>
 
 

@@ -55,7 +55,11 @@ public class SqlProvider {
     public String selectAllCommunity(String keyword){
         String sql="SELECT * FROM tb_community ";
         if(keyword!=null && keyword.length()>0){
-            sql+="WHERE (cname LIKE '%"+keyword+"%' OR mname LIKE '%"+keyword+"%' OR amount LIKE '%"+keyword+"%' OR hold_time LIKE binary '%"+keyword+"%' OR LEVEL LIKE '%"+keyword+"%') and status!=-1 ";
+            sql+="WHERE (cname LIKE '%"+keyword+
+                    "%' OR mname LIKE '%"+keyword+
+                    "%' OR amount LIKE '%"+keyword+
+                    "%' OR hold_time LIKE binary '%"+keyword+
+                    "%' OR LEVEL LIKE '%"+keyword+"%') and status!=-1 ";
         }else {
             sql+=" where status!=-1 ";
         }

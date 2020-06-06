@@ -74,7 +74,7 @@
                 str += '<a lay-href="${pageContext.request.contextPath}/activity/activityDetail?onlyContent=1&activityId=' + pageInfo.list[i].id + '">' + pageInfo.list[i].name + '</a>';
                 str += '</div>';
                 str += '<p class="layui-text-center">';
-                str += pageInfo.list[i].simpleDetail;
+                // str += pageInfo.list[i].simpleDetail;
                 str += '</p>';
                 str += '<p class="layui-text-bottom">';
                 str += '<a>' + pageInfo.list[i].cname + '</a>';

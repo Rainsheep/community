@@ -51,7 +51,7 @@
                 <div id="sourceDiv">
                     <div class="layui-row layui-col-space10 layui-form-item">
                         <div class="layui-col-md4">
-                            <label class="layui-form-label">花销来源</label>
+                            <label class="layui-form-label">赞助来源</label>
                             <div class="layui-input-inline">
                                 <select name="billDetails[0].supportId" lay-search id="sponsor0"
                                         lay-filter="selectSponsor">
@@ -208,7 +208,7 @@
             var code = "";
             code += '<div class="layui-row layui-col-space10 layui-form-item">';
             code += '<div class="layui-col-md4">';
-            code += '<label class="layui-form-label">花销来源</label>';
+            code += '<label class="layui-form-label">赞助来源</label>';
             code += '<div class="layui-input-inline">';
             code += '<select name="billDetails[' + k + '].supportId" lay-search id="sponsor' + k + '" lay-filter="selectSponsor">';
             code += '<option value="">请选择赞助商</option>';
